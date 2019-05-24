@@ -1,0 +1,46 @@
+@import 'reset';
+@import 'fonts';
+
+/* Переменные */
+$color-red: #ea271a;
+
+/* Миксины */
+
+/* flex классы */
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/*Контейнер для всего сайта */
+#wrapper {
+  z-index: 0;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 10px;
+}
+
+/* Шапка */
+#main-header {
+  width: 100%;
+  height: 64px;
+
+    .container {
+      padding: 0;
+      justify-content: space-between;
+    }
+}
+
+/* Логотип */
+.header-logo {
+  background-color: red;
+  border: 5px solid green;
+}
