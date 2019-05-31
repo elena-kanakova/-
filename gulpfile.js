@@ -184,8 +184,10 @@ gulp.task('watch:dev', function(done) {
         server: "src/"
     });
 
-    gulp.watch("src/styles/*.scss", gulp.parallel('html:dev','sass:dev','js:dev'));
-    gulp.watch("src/*.html").on('change', () => {
+    gulp.watch("src/styles/*.scss", gulp.parallel('sass:dev'));
+    gulp.watch("src/html/*.html", gulp.parallel('html:dev'));
+    gulp.watch("src/scripts/*.js", gulp.parallel('js:dev'));
+    gulp.watch("src/index.html").on('change', () => {
         browserSync.reload();
         done();
     });

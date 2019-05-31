@@ -1,0 +1,215 @@
+#section-2 {
+  width: 100%;
+  height: 100%;
+  background: url("../img/section-2_bg.jpg") center bottom no-repeat;
+  background-size: auto 100%;
+}
+
+@mixin border-grid-top {
+  border-top: 0.5px solid $light-grey;
+}
+
+@mixin border-grid-right {
+  border-right: 0.5px solid $light-grey;
+}
+
+.section-2_left-part {
+  width: 80%;
+  flex: 1 1 80%;
+  padding-right: 90px;
+
+  @include mq('tablet') {
+    padding-right: 0;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .title {
+    position: relative;
+    margin-top: 85px;
+
+    @include title-triangle;
+
+    h2 {
+      @include font-title(55px,$font,$color-grey);
+    }
+  }
+
+  .text {
+    margin-top: 40px;
+
+    p {
+      font: 18px/24px $font;
+      font-weight: 400;
+      color: $color-grey;
+      margin-bottom: 25px;
+    }
+
+    p:nth-last-child(1) {
+      font-style: italic;
+    }
+  }
+
+  .elements-wrap {
+    margin-top: 10px;
+    justify-content: space-between;
+
+    .element {
+      flex: 1 1 33%;
+      width: 33%;
+      padding: 26px 0 10px 35px;
+      @include border-grid-right;
+
+      @include mq('desktop') {
+        padding-right: 40px;
+      }
+
+      @include mq('tablet') {
+        padding: 26px 10px 10px 10px;
+      }
+
+      .icon {
+        margin-bottom: 32px;
+
+        img {
+          display: block;
+        }
+      }
+
+      .text {
+        p {
+          font: 18px $font;
+          font-weight: 500;
+          color: $color-grey;
+
+          span {
+            color: $color-red;
+          }
+        }
+      }
+      &:nth-child(1), &:nth-child(4) {
+        padding: 26px 10px 10px 0;
+
+        @include mq-custom(900px) {
+          padding: 26px 10px 10px 35px;
+        }
+
+        @include mq('tablet') {
+          padding: 26px 10px 10px 10px;
+        }
+      }
+
+      &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+        @include border-grid-top;
+
+        @include mq-custom(900px) {
+          @include border-grid-right;
+        }
+      }
+
+      &:nth-child(1), &:nth-child(5) {
+        @include mq-custom(900px) {
+          @include border-grid-right;
+        }
+      }
+
+      &:nth-child(3n) {
+        border-right: none;
+
+        @include mq-custom(900px) {
+          @include border-grid-right;
+          @include border-grid-top;
+        }
+      }
+
+      &:nth-child(2n) {
+
+        @include mq-custom(900px) {
+          border-right: none;
+        }
+      }
+
+      @include mq-custom(900px) {
+        width: 50%;
+        flex: 1 1 50%;
+        border-right: none;
+      }
+    }
+  }
+}
+
+  .section-2_right-part {
+    position: relative;
+    z-index: 1;
+    width: 40%;
+    flex: 1 1 40%;
+    padding-top: 65px;
+    padding-left: 83px;
+
+    @include mq('tablet') {
+      width: 100%;
+      flex: 1 1 40%;
+      padding-left: 30px;
+    }
+
+    &:after {
+      @include pseudo(-1,0,-320px);
+      background: url('../img/section-2_bg_right.jpg') left top no-repeat;
+      background-size: auto 100%;
+
+      @include mq('tablet') {
+        left: -30px;
+        right: -30px;
+        background-size: cover;
+      }
+    }
+
+    .element {
+      position: relative;
+      padding-top: 50px;
+      padding-bottom: 60px;
+      box-sizing: border-box;
+
+      &:after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 250px;
+        height: 0.55px;
+        background: $light-grey;
+      }
+
+      .big {
+        font: 100px $font;
+        font-weight: 300;
+        color: $color-grey;
+
+        @include mq('desktop') {
+          font: 80px $font;
+        }
+
+        @include mq-custom(900px) {
+          font: 70px $font;
+        }
+      }
+
+      p {
+        font: 24px $font;
+        font-weight: 400;
+        color: $color-grey;
+
+        @include mq('tablet') {
+          font: 20px $font;
+        }
+
+        @include mq-custom(900px) {
+          font: 20px $font;
+        }
+      }
+    }
+
+    @include mq('desktop') {
+      padding-left: 40px;
+    }
+  }

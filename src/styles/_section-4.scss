@@ -1,0 +1,176 @@
+#section-4 {
+  width: 100%;
+}
+
+.section-4_title-link {
+  margin-top: 70px;
+  justify-content: space-between;
+
+  .title {
+    position: relative;
+    @include title-triangle;
+
+    h2 {
+      @include font-title(55px,$font-2,$color-grey);
+    }
+  }
+
+  .link {
+    align-items: center;
+
+    a {
+      margin-left: 20px;
+      font: 18px $font;
+      font-weight: 500;
+      color: $color-red;
+    }
+  }
+}
+
+.section-4_elements-form {
+
+  .container {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    justify-content: space-between;
+
+    &:before {
+      @include pseudo($index:-1,$left:-490px,$right:0,$top:0,$bottom:0);
+      background: url("../img/section-4_left_bg.jpg") left top no-repeat;
+    }
+  }
+}
+
+@mixin section-4_pseudo {
+  @include pseudo($index:-1,$left:-320px,$right:0,$top:0,$bottom:0);
+  background-size: cover;
+}
+
+#section-4 .elements-wrap {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 auto;
+  justify-content: center;
+
+  .element {
+    position: relative;
+    max-height: 174px;
+    height: 100%;
+    padding: 50px 0 0;
+
+    p {
+      font: 24px $font-2;
+      font-weight: 500;
+      color: $color-grey;
+
+      span {
+        color: $color-red;
+      }
+    }
+
+    /*&:nth-child(1) {
+      &:before {
+        @include pseudo(-1,-530px,-5px);
+        background: url("../img/section-4_element-1_bg.jpg") left center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        @include pseudo(-1,-530px,-5px);
+        background: url("../img/section-4_element-2_bg.jpg") left center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        @include pseudo(-1,-530px,-5px);
+        background: url("../img/section-4_element-3_bg.jpg") left center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &:nth-child(4) {
+      &:before {
+        @include pseudo(-1,-530px,-5px);
+        background: url("../img/section-4_element-4_bg.jpg") left center no-repeat;
+        background-size: cover;
+      }
+    }*/
+  }
+}
+
+#section-4_form {
+  position: relative;
+  z-index: 1;
+  max-width: 483px;
+  flex: 0 0 auto;
+  padding: 25px 100px 25px 10px;
+  background: white;
+
+  @include mq('desktop') {
+    padding: 25px 80px 25px 10px;
+  }
+
+  @include mq('tablet-wide') {
+    padding: 25px 50px 25px 10px;
+  }
+
+  @include mq('tablet') {
+    padding: 25px 20px 25px 10px;
+  }
+
+  h3 {
+    font: 30px $font-2;
+    font-weight: 500;
+    color: $color-grey;
+  }
+
+  @include form-triangle;
+
+  .btn-form_submit {
+    @extend %btn-general;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+
+    span {
+      margin-left: 10px;
+      font: 18px $font;
+      font-weight: 400;
+      color: white;
+    }
+  }
+}
+
+.input-wrap {
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.input-wrap.input {
+  @include label;
+  @include input;
+  @include placeholder;
+}
+
+.input-wrap.input-options {
+  @include label;
+  @include select;
+  @include placeholder;
+}
+.input-wrap.textarea {
+  @include label;
+  @include textarea;
+  @include placeholder;
+  height: 82px;
+}
+
+.input-wrap.input-checkbox {
+  @include input-checkbox;
+  margin-top: 20px;
+}
+

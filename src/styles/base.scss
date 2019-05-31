@@ -3,8 +3,225 @@
 
 /* Переменные */
 $color-red: #ea271a;
+$font: TTNorms, sans-serif;
+$font-2: GeometriaM, sans-serif;
+$color-grey: #343434;
+$light-grey: #d9dada;
+$light-grey_2: #757575;
 
 /* Миксины */
+
+$breakpoints: (
+        "phone":        400px,
+        "phone-wide":   480px,
+        "phablet":      560px,
+        "tablet-small": 640px,
+        "tablet":       768px,
+        "tablet-wide":  1024px,
+        "desktop":      1280px,
+        "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == min {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin mq-custom($width, $type: max) {
+    @if $type == min {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+}
+
+@mixin auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin pseudo($index:1,$left:0,$right:0,$top:0,$bottom:0,$display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+  z-index: $index;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+}
+
+@mixin absolute($index:1,$left:0,$right:0,$top:0,$bottom:0) {
+  position: absolute;
+  z-index: $index;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+}
+
+@mixin font-title($size:55px, $family:$font, $color:#343434) {
+  font: $size $family;
+  font-weight: 500;
+  color: $color;
+  padding-top: 20px;
+
+  @include mq('desktop') {
+    font: 45px $family;
+  }
+
+  @include mq('tablet') {
+    font: 35px $family;
+  }
+
+  @include mq('phone-wide') {
+    font: 30px $family;
+  }
+}
+
+@mixin title-triangle {
+  &:before {
+    @include pseudo(1,0,auto,0,auto);
+    width: 0;
+    height: 0;
+    border-top: 20px solid $color-red;
+    border-right: 20px solid transparent
+  }
+}
+
+@mixin form-triangle {
+  &:before {
+    @include pseudo(1,auto,0,0,auto);
+    width: 0;
+    height: 0;
+    border-top: 20px solid $color-red;
+    border-left: 20px solid transparent
+  }
+}
+
+@mixin text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin input {
+  input {
+    width: 100%;
+    border: 1px solid $light-grey;
+    padding: 10px 15px 10px 25px;
+    font: 16px $font-2;
+    font-weight: 400;
+    color: $color-grey;
+  }
+}
+
+@mixin textarea {
+  textarea {
+    width: 100%;
+    border: 1px solid $light-grey;
+    padding: 10px 15px 10px 25px;
+    font: 16px $font-2;
+    font-weight: 400;
+    color: $color-grey;
+  }
+}
+
+@mixin select {
+  select {
+    width: 100%;
+    border: 1px solid $light-grey;
+    padding: 10px 15px 10px 25px;
+    font: 16px $font-2 !important;
+    font-weight: 400;
+    color: $light-grey_2;
+  }
+  option {
+    padding: 10px;
+    font: 12px $font-2 !important;
+    font-weight: 400;
+    color: $light-grey_2;
+    box-sizing: content-box;
+    filter: hue-rotate(125deg);
+  }
+}
+
+@mixin input-checkbox {
+
+  label {
+    align-items: center;
+  }
+
+  input {
+    display: block;
+  }
+
+  span {
+    display: block;
+    margin-left: 15px;
+    font: 14px $font;
+    font-weight: 400;
+    color: $light-grey_2;
+  }
+}
+
+@mixin label {
+  position: relative;
+
+  label {
+    position: relative;
+    font: 16px $font-2;
+    font-weight: 400;
+    color: $light-grey_2;
+
+    span {
+      position: absolute;
+      left: 18px;
+      top: 0;
+      color: $color-red;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    opacity:1;
+    font: 16px $font-2;
+    font-weight: 400;
+    color: $light-grey_2;
+  }/* webkit */
+  ::-moz-placeholder          {
+    opacity:1;
+    font: 16px $font-2;
+    font-weight: 400;
+    color: $light-grey_2;
+  }/* Firefox 19+ */
+  :-moz-placeholder           {
+    opacity:1;
+    font: 16px $font-2;
+    font-weight: 400;
+    color: $light-grey_2;
+  }/* Firefox 18- */
+  :-ms-input-placeholder      {
+    opacity:1;
+    font: 16px $font-2;
+    font-weight: 400;
+    color: $light-grey_2;
+  }/* IE */
+
+  :focus::-webkit-input-placeholder {opacity:0;}/* webkit */
+  :focus::-moz-placeholder          {opacity:0;}/* Firefox 19+ */
+  :focus:-moz-placeholder           {opacity:0;}/* Firefox 18- */
+  :focus:-ms-input-placeholder      {opacity:0;}/* IE */
+}
 
 /* flex классы */
 .flex {
@@ -16,31 +233,162 @@ $color-red: #ea271a;
   align-items: center;
 }
 
+.column {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 /*Контейнер для всего сайта */
 #wrapper {
   z-index: 0;
   width: 100%;
+  overflow: hidden;
 }
 
 .container {
   width: 100%;
   max-width: 1280px;
   padding: 0 10px;
+  margin: 0 auto;
+
+  @include mq('desktop-wide') {
+    padding: 0 30px;
+  }
+
+  @include mq('tablet') {
+    padding: 0 20px;
+  }
+
+  @include mq('phone-wide') {
+    padding: 0 10px;
+  }
 }
 
 /* Шапка */
 #main-header {
+  padding-top: 28px;
   width: 100%;
   height: 64px;
-
+  position: fixed;
+  z-index: 10;
     .container {
       padding: 0;
       justify-content: space-between;
     }
+
+  @include mq('tablet-wide') {
+    display: none;
+  }
 }
 
-/* Логотип */
 .header-logo {
-  background-color: red;
-  border: 5px solid green;
+  padding: 10px 9px;
+  margin-top: 15px;
+  background: $color-red;
+  background:linear-gradient(135deg, transparent 5px, $color-red 0);
+  box-sizing: border-box;
+  a {
+    font: 19px/24px $font;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+  }
 }
+
+.main-header_company-text {
+  margin-left: 44px;
+  margin-top: 15px;
+
+  p {
+    font: 16px $font;
+    font-weight: 500;
+    color: $color-grey;
+  }
+}
+
+%btn-general {
+  width: 269px;
+  height: 61px;
+  background: $color-red;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+%button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.main-header_right {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_call-me {
+  @extend %btn-general;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin-right: 18px;
+    font: 18px $font;
+    font-weight: 500;
+    color: white;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @extend %button;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+    width: 61px;
+    height: 61px;
+  }
+}
+
+.header_phone {
+  margin-left: 46px;
+  a {
+    font: 18px $font;
+    font-weight: 600;
+    color: $color-grey;
+  }
+}
+
+.header_btn-menu {
+  align-items: flex-end;
+  margin-left: 56px;
+  span {
+    display: block;
+    background: $color-red;
+  }
+  span:nth-child(1), span:nth-child(3) {
+    width: 19px;
+    height: 2px;
+  }
+  span:nth-child(2) {
+    margin: 5px 0;
+    width: 14px;
+    height: 2px;
+  }
+}
+
+@import "section-1";
+@import "section-2";
+@import "section-3";
+@import "section-4";
+@import "section-5";
+@import "section-6";
+@import "section-7";
+@import "section-8";
+@import "section-9";
+@import "section-10";

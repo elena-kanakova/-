@@ -1,6 +1,6 @@
 /* Шрифты */
 @font-face {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms Bold';
   src: url('../fonts/TTNorms-Bold.eot');
   src: local('TT Norms Bold'), local('TTNorms-Bold'),
   url('../fonts/TTNorms-Bold.eot?#iefix') format('embedded-opentype'),
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: 'TT Norms';
+  font-family: 'TTNorms';
   src: url('../fonts/TTNorms-Regular.eot');
   src: local('TT Norms Regular'), local('TTNorms-Regular'),
   url('../fonts/TTNorms-Regular.eot?#iefix') format('embedded-opentype'),
@@ -24,12 +24,24 @@
 }
 
 @font-face {
-  font-family: 'TT Norms';
+  font-family: 'TT Norms Medium';
   src: url('../fonts/TTNorms-Medium.eot');
   src: local('TT Norms Medium'), local('TTNorms-Medium'),
   url('../fonts/TTNorms-Medium.eot?#iefix') format('embedded-opentype'),
   url('../fonts/TTNorms-Medium.woff') format('woff'),
   url('../fonts/TTNorms-Medium.ttf') format('truetype');
+
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GeometriaM';
+  src: url('../fonts/Geometria-Medium.eot');
+  src: local('Geometria Medium'), local('Geometria-Medium'),
+  url('../fonts/Geometria-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Geometria-Medium.woff') format('woff'),
+  url('../fonts/Geometria-Medium.ttf') format('truetype');
 
   font-weight: 500;
   font-style: normal;
