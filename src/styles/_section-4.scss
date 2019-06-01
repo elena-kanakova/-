@@ -6,6 +6,12 @@
   margin-top: 70px;
   justify-content: space-between;
 
+  @include mq('tablet-small') {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   .title {
     position: relative;
     @include title-triangle;
@@ -17,6 +23,10 @@
 
   .link {
     align-items: center;
+
+    @include mq('tablet-small') {
+      margin-top: 30px;
+    }
 
     a {
       margin-left: 20px;
@@ -35,9 +45,9 @@
     margin-top: 40px;
     justify-content: space-between;
 
-    &:before {
-      @include pseudo($index:-1,$left:-490px,$right:0,$top:0,$bottom:0);
-      background: url("../img/section-4_left_bg.jpg") left top no-repeat;
+    @include mq('tablet-wide') {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 }
@@ -47,17 +57,35 @@
   background-size: cover;
 }
 
+@mixin section-4_element-before {
+  height: 100%;
+  border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+}
+
 #section-4 .elements-wrap {
   position: relative;
   z-index: 1;
   flex: 1 0 auto;
   justify-content: center;
 
+  @include mq('tablet-wide') {
+    width: 100%;
+  }
+
   .element {
     position: relative;
     max-height: 174px;
     height: 100%;
-    padding: 50px 0 0;
+    flex: 1 1 100%;
+    padding: 0;
+    align-items: center;
+    background-size: auto 100%;
+
+    @include mq('tablet-wide') {
+      width: 100%;
+      max-height: 100%;
+    }
 
     p {
       font: 24px $font-2;
@@ -69,47 +97,114 @@
       }
     }
 
-    /*&:nth-child(1) {
+    &:nth-child(1) {
+      margin-top: 1px;
+      background: url("../img/section-4_element-1_bg-2.png") right center no-repeat;
       &:before {
-        @include pseudo(-1,-530px,-5px);
-        background: url("../img/section-4_element-1_bg.jpg") left center no-repeat;
-        background-size: cover;
+        @include pseudo(-1,-530px,-5px,1px,1px);
+        @include section-4_element-before;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(228,228,228,1) 95%, rgba(217,217,217,1) 100%);
+
+        @include mq('tablet-wide') {
+          @include pseudo(-1,-40px,-40px);
+        }
+      }
+
+      @include mq('tablet-wide') {
+        padding: 20px;
+        background: none;
       }
     }
 
     &:nth-child(2) {
+      background: url("../img/section-4_element-2_bg-2.png") right center no-repeat;
       &:before {
-        @include pseudo(-1,-530px,-5px);
-        background: url("../img/section-4_element-2_bg.jpg") left center no-repeat;
-        background-size: cover;
+        @include pseudo(-1,-530px,-5px,1px,1px);
+        @include section-4_element-before;
+        background: linear-gradient(90deg, rgba(247,247,247,1) 0%, rgba(221,221,221,1) 95%, rgba(205,205,205,1) 100%);
+
+        @include mq('tablet-wide') {
+          @include pseudo(-1,-40px,-40px);
+        }
+      }
+
+      @include mq('tablet-wide') {
+        padding: 20px;
+        background: none;
       }
     }
 
     &:nth-child(3) {
+      background: url("../img/section-4_element-3_bg-2.png") right center no-repeat;
       &:before {
-        @include pseudo(-1,-530px,-5px);
-        background: url("../img/section-4_element-3_bg.jpg") left center no-repeat;
-        background-size: cover;
+        @include pseudo(-1,-530px,-5px,1px,1px);
+        @include section-4_element-before;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(228,228,228,1) 95%, rgba(217,217,217,1) 100%);
+
+        @include mq('tablet-wide') {
+          @include pseudo(-1,-40px,-40px);
+        }
+      }
+
+      @include mq('tablet-wide') {
+        padding: 20px;
+        background: none;
       }
     }
 
     &:nth-child(4) {
+      background: url("../img/section-4_element-4_bg-2.png") right center no-repeat;
       &:before {
-        @include pseudo(-1,-530px,-5px);
-        background: url("../img/section-4_element-4_bg.jpg") left center no-repeat;
-        background-size: cover;
+        @include pseudo(-1,-530px,-5px,1px,1px);
+        @include section-4_element-before;
+        background: linear-gradient(90deg, rgba(247,247,247,1) 0%, rgba(221,221,221,1) 95%, rgba(205,205,205,1) 100%);
+
+        @include mq('tablet-wide') {
+          @include pseudo(-1,-40px,-40px);
+        }
       }
-    }*/
+
+      @include mq('tablet-wide') {
+        padding: 20px;
+        background: none;
+      }
+    }
   }
 }
 
 #section-4_form {
   position: relative;
   z-index: 1;
-  max-width: 483px;
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   padding: 25px 100px 25px 10px;
   background: white;
+
+  &:after {
+    @include  pseudo(-1,-70px);
+    background: white;
+    width: 100%;
+    height: 100%;
+    transform: skew(12deg, 0deg);
+
+    @include mq('tablet-wide') {
+      background: none;
+    }
+  }
+
+  @include mq('tablet-wide') {
+    margin-top: 30px;
+    @include auto;
+    width: 100%;
+    background: rgba(255,255,255,.5);
+  }
+
+  form {
+    @include mq('tablet-wide') {
+      margin-top: 30px;
+      @include auto;
+      max-width: 300px;
+    }
+  }
 
   @include mq('desktop') {
     padding: 25px 80px 25px 10px;
@@ -127,12 +222,17 @@
     font: 30px $font-2;
     font-weight: 500;
     color: $color-grey;
+
+    @include mq('tablet-wide') {
+      text-align: center;
+    }
   }
 
   @include form-triangle;
 
   .btn-form_submit {
     @extend %btn-general;
+    display: block;
     border: none;
     cursor: pointer;
     margin-top: 20px;
@@ -143,6 +243,10 @@
       font-weight: 400;
       color: white;
     }
+
+    @include mq('tablet-wide') {
+       @include auto;
+     }
   }
 }
 
