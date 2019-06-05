@@ -70,6 +70,10 @@
     padding-right: 70px;
     justify-content: space-between;
 
+    @include mq('desktop') {
+      padding-right: 50px;
+    }
+
     .element {
       flex: 1 1 33%;
       width: 33%;
@@ -110,6 +114,10 @@
         padding: 10px 10px 10px 0;
         max-width: 200px;
 
+        @include mq('desktop') {
+          max-width: 100%;
+        }
+
         @include mq-custom(900px) {
           padding: 10px 10px 10px 35px;
         }
@@ -136,10 +144,18 @@
 
       &:nth-child(2), &:nth-child(5) {
         padding-left: 70px;
+
+        @include mq('desktop') {
+          padding: 10px 0 10px 30px;
+        }
       }
 
       &:nth-child(3), &:nth-child(6) {
         padding-left: 40px;
+
+        @include mq('desktop') {
+          padding: 10px 0 10px 30px;
+        }
       }
 
       &:nth-child(3n) {
@@ -155,6 +171,12 @@
 
         @include mq-custom(900px) {
           border-right: none;
+        }
+      }
+
+      &:nth-child(1), &:nth-child(2n), &:nth-child(5n), &:nth-child(3n) {
+        @include mq('tablet') {
+          padding: 10px 10px 10px 10px;
         }
       }
 

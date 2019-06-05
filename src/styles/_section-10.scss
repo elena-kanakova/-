@@ -1,5 +1,5 @@
 .section-10_title {
-  margin: 85px 0 55px;
+  margin: 90px 0 55px;
   position: relative;
   @include title-triangle;
 
@@ -127,6 +127,9 @@
     @include mq('tablet') {
       margin-right: 0;
     }
+
+    .textarea {}
+    height: 83px;
   }
 
   @include title-triangle;

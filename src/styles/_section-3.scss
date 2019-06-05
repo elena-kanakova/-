@@ -74,6 +74,10 @@
     &:nth-child(2n) {
       margin-right: 0;
       padding-left: 12px;
+
+      @include mq('phone-wide') {
+        padding-left: 0;
+      }
     }
 
     .number {

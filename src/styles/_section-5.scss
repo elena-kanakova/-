@@ -133,6 +133,16 @@
 
     &:nth-child(1) {
       margin-left: 0;
+
+      @include mq('tablet-small') {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @include mq('tablet-small') {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
