@@ -1,0 +1,190 @@
+#section-6 {
+  width: 100%;
+  height: 100%;
+  background: url("../img/section-6_bg.jpg") center top no-repeat;
+  box-sizing: border-box;
+  background-size: 1920px 100%;
+
+  .container {
+    padding-top: 85px;
+    padding-bottom: 28px;
+  }
+}
+
+.section-6_title {
+  position: relative;
+
+  @include title-triangle;
+
+  h2 {
+    @include font-title(55px,$font-2,$color-grey);
+
+    br {
+      @include mq('phablet') {
+        display: none;
+      }
+    }
+  }
+}
+
+.section-6_form-wrap {
+  width: 62%;
+  margin-top: 65px;
+
+  @include mq('desktop') {
+    width: 80%;
+  }
+
+  @include mq('phablet') {
+    @include auto;
+  }
+
+  @include mq('phone-wide') {
+    width: 100%;
+  }
+}
+
+#section-6_form {
+  position: relative;
+  z-index: 2;
+  padding: 25px 60px 42px 0;
+  background: white;
+
+  @include mq('phablet') {
+    padding: 25px 30px 42px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  @include mq('phone') {
+    padding: 25px 10px;
+  }
+
+  &:after {
+    @include pseudo(-1,-2000px);
+    background: white;
+
+    @include mq('phablet') {
+      @include pseudo(-1);
+      background: none;
+    }
+  }
+
+  h3 {
+    font: 30px $font-2;
+    font-weight: 500;
+    color: $color-grey;
+
+    @include mq('phablet') {
+      font: 26px $font-2;
+    }
+  }
+
+  .input-wrap {
+    overflow: hidden;
+    margin-top: 25px;
+    margin-right: 8px;
+
+    @include mq('tablet') {
+      margin-right: 0;
+    }
+  }
+
+  .input-checkbox {
+    span {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  @include form-triangle;
+
+  .btn-form_submit {
+    @extend %btn-general;
+    display: block;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+
+    span {
+      margin-left: 10px;
+      font: 18px $font;
+      font-weight: 400;
+      color: white;
+    }
+
+    @include mq('tablet-wide') {
+      @include auto;
+    }
+  }
+}
+
+.section-6__input_form-wrap {
+  .input-wrap {
+    &:nth-child(1) {
+      width: 48%;
+      flex: 1 1 48%;
+
+      @include mq('tablet') {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+    &:nth-child(2) {
+      width: 48%;
+      flex: 1 1 48%;
+
+      @include mq('tablet') {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+    &:nth-child(3) {
+      width: 30%;
+      flex: 1 1 30%;
+
+      @include mq('tablet-wide') {
+        width: 48%;
+        flex: 1 1 48%;
+      }
+
+      @include mq('tablet') {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+    &:nth-child(4) {
+      width: 30%;
+      flex: 1 1 30%;
+
+      @include mq('tablet-wide') {
+        width: 48%;
+        flex: 1 1 48%;
+      }
+
+      @include mq('tablet') {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+    &:nth-child(5) {
+      width: 30%;
+      flex: 1 1 30%;
+
+      @include mq('tablet-wide') {
+        width: 48%;
+        flex: 1 1 48%;
+      }
+
+      @include mq('tablet') {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
+
+.section-6__input_form-agree_wrap {
+  flex-direction: column;
+}

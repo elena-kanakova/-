@@ -1,0 +1,230 @@
+#section-7 {
+  width: 100%;
+  height: 100%;
+  background: url('../img/section-7_bg.jpg') top center no-repeat;
+  background-size: 1920px 100%;
+
+  .container {
+    padding-bottom: 50px;
+  }
+}
+
+.section-7_title-link {
+  margin-top: 85px;
+  justify-content: space-between;
+
+  @include mq('tablet-small') {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .title {
+    position: relative;
+    @include title-triangle;
+
+    h2 {
+      @include font-title(55px,$font-2,$color-grey);
+    }
+  }
+
+  .link {
+    margin-right: 144px;
+    margin-top: 35px;
+    align-items: center;
+
+    @include mq('tablet-small') {
+      margin-top: 30px;
+    }
+
+    a {
+      margin-left: 20px;
+      font: 18px $font;
+      font-weight: 500;
+      color: $color-red;
+      text-decoration: underline;
+    }
+  }
+}
+
+.section-7_content {
+  margin-top: 35px;
+  justify-content: space-between;
+
+  @include mq('tablet') {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .photo-wrap {
+    justify-content: space-between;
+
+    @include mq('desktop') {
+      justify-content: flex-start;
+      width: 50%;
+      flex: 1 1 50%;
+    }
+
+    @include mq('tablet') {
+      width: 100%;
+      flex: 1 1 100%;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        @include pseudo(2,7px,7px,7px,7px);
+        border: 2px solid white;
+      }
+
+      img {
+        display: block;
+      }
+    }
+
+    .photo.big {
+      margin-top: 5px;
+      max-width: 100%;
+
+      @include mq('tablet-small') {
+        width: 100%;
+        height: auto;
+      }
+
+      img {
+
+        @include mq('tablet') {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .before-after-photo_wrap {
+
+    @include mq('tablet-small') {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-self: flex-start;
+    }
+
+    .photo.before-after {
+      width: 48%;
+      flex: 1 1 48%;
+
+      @include mq('tablet-small') {
+        width: 100%;
+        flex: 1 1 100%;
+        height: auto;
+      }
+
+      img {
+
+        @include mq('tablet-small') {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &:nth-child(1) {
+        margin-right: 5px;
+
+        @include mq('tablet-small') {
+          margin-right: 0;
+          margin-bottom: 5px;
+        }
+      }
+
+      span {
+        position: absolute;
+        z-index: 2;
+        top: 7px;
+        left: 7px;
+        width: 72px;
+        height: 33px;
+        background: white;
+        font: 20px $font-2;
+        font-weight: 500;
+        color: $color-grey;
+        text-align: center;
+      }
+    }
+  }
+
+  .text-btn_wrap {
+    padding: 80px 0 20px 105px;
+
+    @include mq('desktop') {
+      padding: 80px 0 20px 50px;
+    }
+
+    @include mq('tablet-wide') {
+      padding: 20px 0 20px 50px;
+      width: 100%;
+      flex: 1 1 100%;
+    }
+
+    @include mq('tablet') {
+      padding: 50px 0 20px;
+      width: 100%;
+      flex: 1 1 100%;
+    }
+
+    .text {
+
+      h3 {
+        margin-bottom: 20px;
+        font: 24px $font;
+        font-weight: 500;
+        color: #4a4a4a;
+      }
+
+      p {
+        margin: 15px 0;
+        font: 18px $font;
+        font-weight: 400;
+        color: #4a4a4a;
+      }
+
+      ul {
+        margin: 15px 0;
+        padding-left: 20px;
+
+        li {
+          list-style: disc;
+          font: 18px/24px $font;
+          font-weight: 400;
+          color: #4a4a4a;
+        }
+      }
+    }
+
+    .btn-next {
+      margin-top: 40px;
+
+      button {
+        @extend %btn-general;
+        display: block;
+        margin-top: 35px;
+        border: none;
+        cursor: pointer;
+        transition: all .5s linear;
+
+        span {
+          font: 18px $font;
+          font-weight: 400;
+          color: white;
+        }
+      }
+
+      img {
+        margin-left: 8px;
+      }
+    }
+  }
+}

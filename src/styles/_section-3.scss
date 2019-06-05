@@ -1,7 +1,7 @@
 .section-3-4_wrap {
   width: 100%;
   background: url("../img/section-3-4_bg.jpg") center top no-repeat;
-  background-size: cover;
+  background-size: 1920px 100%;
 }
 
 #section-3 {
@@ -28,7 +28,7 @@
 }
 
 .section-3_text {
-  margin-top: 30px;
+  margin-top: 20px;
 
   p {
     font: 24px $font-2;
@@ -53,11 +53,10 @@
   }
 
   .element {
-    margin-bottom: 35px;
-    margin-right: 4.5%;
-    width: 45.5%;
-    max-width: 525px;
-    flex: 1 1 45.5%;
+    margin-bottom: 20px;
+    width: 50%;
+    max-width: 500px;
+    flex: 1 1 50%;
     align-items: flex-start;
     justify-content: flex-start;
     box-sizing: border-box;
@@ -74,6 +73,7 @@
 
     &:nth-child(2n) {
       margin-right: 0;
+      padding-left: 12px;
     }
 
     .number {

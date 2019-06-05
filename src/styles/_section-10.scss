@@ -1,0 +1,187 @@
+.section-10_title {
+  margin: 85px 0 55px;
+  position: relative;
+  @include title-triangle;
+
+  h2 {
+    @include font-title(55px,$font-2,$color-grey);
+  }
+}
+
+.section-10_elements-wrap {
+  .contacts {
+    width: 383px;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+    @include mq('tablet') {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .element {
+      margin-bottom: 30px;
+
+      p {
+        font: 18px $font-2;
+        font-weight: 400;
+        color: $color-grey;
+      }
+
+      a {
+        font: 18px $font-2;
+        font-weight: 400;
+        color: $color-grey;
+      }
+
+      .bold {
+         font-weight: 600;
+      }
+
+      .fb, .youtube, .insta {
+        margin-right: 10px;
+
+        a {
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .contacts-other {
+      margin-top: 120px;
+
+      @include mq('tablet') {
+        margin-top: 0;
+      }
+    }
+
+    .contacts_copyright {
+      margin-top: 70px;
+
+      @include mq('tablet') {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .map-form_wrap {
+    position: relative;
+
+    #map {
+      position: absolute;
+      left: 0;
+      right: -457px;
+      height: 524px;
+
+      @include mq('tablet') {
+        position: relative;
+        right: 0;
+      }
+    }
+
+    .contacts-form {
+      width: 100%;
+      max-width: 782px;
+      margin-top: 524px;
+
+      @include mq('tablet') {
+        max-width: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include mq('tablet') {
+    flex-direction: column;
+  }
+}
+
+#section-10_form {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  padding: 25px 0 35px 45px;
+  background: white;
+
+  @include mq('tablet') {
+    padding: 25px 30px;
+  }
+
+  h3 {
+    font: 30px $font-2;
+    font-weight: 500;
+    color: $color-grey;
+
+    @include mq('phablet') {
+      font: 26px $font-2;
+    }
+  }
+
+  .input-wrap {
+    overflow: hidden;
+    margin-top: 25px;
+    margin-right: 8px;
+
+    @include mq('tablet') {
+      margin-right: 0;
+    }
+  }
+
+  @include title-triangle;
+
+  .btn-form_submit {
+    @extend %btn-general;
+    display: block;
+    border: none;
+    cursor: pointer;
+    width: 261px;
+    height: 63px;
+    flex: 1 1 261px;
+    margin-top: 20px;
+    margin-left: 10px;
+
+    span {
+      margin-left: 10px;
+      font: 18px $font;
+      font-weight: 400;
+      color: white;
+
+      br {
+        display: block;
+      }
+    }
+
+    @include mq('tablet-wide') {
+      @include auto;
+    }
+  }
+}
+
+.section-10__input_form-wrap {
+  .input-wrap {
+    &:nth-child(1) {
+      width: 48%;
+      flex: 1 1 48%;
+
+      @include mq('tablet') {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+    &:nth-child(2) {
+      width: 48%;
+      flex: 1 1 48%;
+
+      @include mq('tablet') {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+    &:nth-child(3) {
+      width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+}

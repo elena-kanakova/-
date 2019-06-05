@@ -9,6 +9,30 @@ $color-grey: #343434;
 $light-grey: #d9dada;
 $light-grey_2: #757575;
 
+/* Экстенды */
+
+%text-font {
+  font: 24px $font;
+  font-weight: 400;
+  color: $color-grey;
+}
+
+%btn-general {
+  width: 261px;
+  height: 63px;
+  background: $color-red;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+%button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 /* Миксины */
 
 $breakpoints: (
@@ -72,7 +96,7 @@ $breakpoints: (
   font: $size $family;
   font-weight: 500;
   color: $color;
-  padding-top: 20px;
+  padding-top: 28px;
 
   @include mq('desktop') {
     font: 45px $family;
@@ -145,7 +169,7 @@ $breakpoints: (
   }
   option {
     padding: 10px;
-    font: 12px $font-2 !important;
+    font: 16px $font-2 !important;
     font-weight: 400;
     color: $light-grey_2;
     box-sizing: content-box;
@@ -160,12 +184,12 @@ $breakpoints: (
   }
 
   input {
-    display: block;
+    display: none;
   }
 
   span {
     display: block;
-    margin-left: 15px;
+    margin-left: 30px;
     font: 14px $font;
     font-weight: 400;
     color: $light-grey_2;
@@ -241,154 +265,194 @@ $breakpoints: (
   flex-wrap: wrap;
 }
 
-/*Контейнер для всего сайта */
-#wrapper {
-  z-index: 0;
-  width: 100%;
-  overflow: hidden;
-}
-
-.container {
-  width: 100%;
-  max-width: 1280px;
-  padding: 0 10px;
-  margin: 0 auto;
-
-  @include mq('desktop-wide') {
-    padding: 0 30px;
+  /*Контейнер для всего сайта */
+  #wrapper {
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
   }
 
-  @include mq('tablet') {
-    padding: 0 20px;
-  }
-
-  @include mq('phone-wide') {
+  .container {
+    width: 100%;
+    max-width: 1280px;
     padding: 0 10px;
-  }
-}
+    margin: 0 auto;
 
-/* Шапка */
-#main-header {
-  padding-top: 28px;
-  width: 100%;
-  height: 64px;
-  position: fixed;
-  z-index: 10;
+    @include mq('desktop-wide') {
+      padding: 0 30px;
+    }
+
+    @include mq('tablet') {
+      padding: 0 20px;
+    }
+
+    @include mq('phone-wide') {
+      padding: 0 10px;
+    }
+  }
+
+  /* Формы */
+  .input-checkbox {
+    label {
+      position: relative;
+
+      &:before {
+        @include pseudo(1,0,0,auto,auto);
+        border-radius: 3px;
+        width: 15px;
+        height: 15px;
+        border: 1px solid $light-grey;
+      }
+    }
+  }
+
+  .input-checkbox input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: $color-red;
+    text-align: center;
+    line-height: 15px;
+  }
+
+  .input-wrap.input {
+    @include label;
+    @include input;
+    @include placeholder;
+
+    input {
+      height: 44px;
+    }
+  }
+
+  .input-wrap.input-options {
+    @include label;
+    @include select;
+    @include placeholder;
+  }
+  .input-wrap.textarea {
+    @include label;
+    @include textarea;
+    @include placeholder;
+    height: 82px;
+  }
+
+  .input-wrap.input-checkbox {
+    @include input-checkbox;
+    margin-top: 20px;
+  }
+
+  /* Шапка */
+  #main-header {
+    padding-top: 28px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
     .container {
-      padding: 0;
+      padding: 0 10px;
       justify-content: space-between;
     }
 
-  @include mq('tablet-wide') {
-    display: none;
-  }
-}
-
-.header-logo {
-  padding: 10px 9px;
-  margin-top: 15px;
-  background: $color-red;
-  background:linear-gradient(135deg, transparent 5px, $color-red 0);
-  box-sizing: border-box;
-  a {
-    font: 19px/24px $font;
-    font-weight: 600;
-    color: white;
-    text-transform: uppercase;
-  }
-}
-
-.main-header_company-text {
-  margin-left: 44px;
-  margin-top: 15px;
-
-  p {
-    font: 16px $font;
-    font-weight: 500;
-    color: $color-grey;
-  }
-}
-
-%btn-general {
-  width: 269px;
-  height: 61px;
-  background: $color-red;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-%button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.main-header_right {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header_call-me {
-  @extend %btn-general;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-
-  p {
-    margin-right: 18px;
-    font: 18px $font;
-    font-weight: 500;
-    color: white;
+    @include mq('tablet-wide') {
+      display: none;
+    }
   }
 
-  button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    @extend %button;
-    border: 1px solid rgba(255,255,255,.2);
-    border-radius: 50%;
-    width: 61px;
-    height: 61px;
-  }
-}
-
-.header_phone {
-  margin-left: 46px;
-  a {
-    font: 18px $font;
-    font-weight: 600;
-    color: $color-grey;
-  }
-}
-
-.header_btn-menu {
-  align-items: flex-end;
-  margin-left: 56px;
-  span {
-    display: block;
+  .header-logo {
+    margin-top: 11px;
+    width: 150px;
+    height: 38px;
     background: $color-red;
-  }
-  span:nth-child(1), span:nth-child(3) {
-    width: 19px;
-    height: 2px;
-  }
-  span:nth-child(2) {
-    margin: 5px 0;
-    width: 14px;
-    height: 2px;
-  }
-}
+    background:linear-gradient(135deg, transparent 5px, $color-red 0);
+    box-sizing: border-box;
+    a {
+      font: 19px/24px $font;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
 
-@import "section-1";
-@import "section-2";
-@import "section-3";
-@import "section-4";
-@import "section-5";
-@import "section-6";
-@import "section-7";
-@import "section-8";
-@import "section-9";
-@import "section-10";
+      sup {
+        font: 10px $font;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .main-header_company-text {
+    margin-left: 44px;
+    margin-top: 10px;
+
+    p {
+      font: 16px $font;
+      font-weight: 500;
+      color: $color-grey;
+    }
+  }
+
+  .main-header_right {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header_call-me {
+    @extend %btn-general;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-right: 18px;
+      font: 18px $font;
+      font-weight: 500;
+      color: white;
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @extend %button;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50%;
+      width: 61px;
+      height: 61px;
+    }
+  }
+
+  .header_phone {
+    margin-left: 46px;
+    a {
+      font: 18px $font;
+      font-weight: 600;
+      color: $color-grey;
+    }
+  }
+
+  .header_btn-menu {
+    align-items: flex-end;
+    margin-left: 56px;
+    span {
+      display: block;
+      background: $color-red;
+    }
+    span:nth-child(1), span:nth-child(3) {
+      width: 19px;
+      height: 2px;
+    }
+    span:nth-child(2) {
+      margin: 5px 0;
+      width: 14px;
+      height: 2px;
+    }
+  }
+
+  @import "section-1";
+  @import "section-2";
+  @import "section-3";
+  @import "section-4";
+  @import "section-5";
+  @import "section-6";
+  @import "section-7";
+  @import "section-8";
+  @import "section-9";
+  @import "section-10";
