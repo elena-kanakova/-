@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Архистрой</title>
+    <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
+    <link rel="stylesheet" href="libs/owl.carousel.min.css">
     <link rel="stylesheet" href="css/base.css">
 
 </head>
 <body>
-<div id="wrapper">
+<div id="pagepiling" class="wrapper">
     <header id="main-header">
     <div class="container flex">
         <div class="main-header_left flex">
@@ -23,14 +25,168 @@
         <div class="main-header_right flex">
             <div class="header_call-me flex">
                 <p>Связаться с нами</p>
-                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+                <button class="modal-link" data-href="order-call"><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
             </div>
             <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
             <div class="header_btn-menu flex column"><span></span><span></span><span></span></div>
         </div>
     </div>
 </header>
-    <section id="section-1">
+<header id="header-open" class="header-open_wrap">
+    <div class="container">
+        <div class="header-wrap flex">
+            <div class="main-header_left flex">
+                <div class="header-logo flex center">
+                    <a href="#">Архистрой <sup>&#169;</sup></a>
+                </div>
+                <div class="main-header_company-text">
+                    <p>Строительство и реконструкция <br>
+                        мансард в Санкт-Петербурге</p>
+                </div>
+            </div>
+            <div class="main-header_right header_btn-menu_close flex">
+                <p class="close">закрыть</p>
+                <p class="x">x</p>
+            </div>
+        </div>
+        <div class="header-menu_wrap flex">
+            <div class="header-menu">
+                <ul class="element flex column">
+                    <li><a href="#section-1" class="underline">Главная</a></li>
+                    <li><a href="#section-2">О компании</a></li>
+                    <li><a href="#section-3">Преимущества</a></li>
+                    <li><a href="#section-4">Наши услуги</a></li>
+                    <li><a href="#section-5">Каталог окон</a></li>
+                </ul>
+            </div>
+            <div class="header-menu">
+                <ul class="element flex column">
+                    <li><a href="#order-call" class="red">Бесплатная консультация</a></li>
+                    <li><a href="#section-7">Наши проекты</a></li>
+                    <li><a href="#section-8">Гарантии</a></li>
+                    <li><a href="#section-9">Отзывы</a></li>
+                    <li><a href="#section-10">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="header-contacts flex column">
+                <div class="phone-email element">
+                    <a href="tel:+79876543210" class="contacts-phone">+7 (987) 654-32-10</a>
+                    <a href="email:info@site.ru" class="contacts-email underline">info@site.ru</a>
+                </div>
+                <div class="header-address element">
+                    <div class="address-icon"><img src="./img/map-icon.png" alt="Адрес: иконка"></div>
+                    <div class="address-text">
+                        <p>г. Санкт-Петербург, <br>Набережная
+                            Обводного канала, <br>д.199-201, лит Н, пом. 10  </p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-other flex column">
+                <div class="company-name element">
+                    <p>ООО «Архистрой» </p>
+                </div>
+                <div class="other-info element">
+                    <p>ИНН 0000000000</p>
+                    <p>КПП 0000000000</p>
+                    <p>ОГРН 0000000000</p>
+                </div>
+                <div class="header_copyright">
+                    <p>© 2019  ООО «Архистрой» </p>
+                </div>
+            </div>
+            <div class="header-social-link flex column">
+                <div class="header-social element flex">
+                    <div class="fb"><a href="#"><img src="img/fb-icon.png" alt="Facebook"></a></div>
+                    <div class="youtube"><a href="#"><img src="img/yt-icon.png" alt="Youtube"></a></div>
+                    <div class="insta"><a href="#"><img src="img/insta-icon.png" alt="Instagramm"></a></div>
+                </div>
+                <div class="header-link flex element">
+                    <p>Разработано в </p><a href="#" class="red">PerfectPixels</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="order-call" class="header-open_wrap">
+    <div class="container">
+        <div class="header-wrap flex">
+            <div class="main-header_left flex">
+                <div class="header-logo flex center">
+                    <a href="#">Архистрой <sup>&#169;</sup></a>
+                </div>
+                <div class="main-header_company-text">
+                    <p>Строительство и реконструкция <br>
+                        мансард в Санкт-Петербурге</p>
+                </div>
+            </div>
+            <div class="main-header_right header_btn-menu_close flex">
+                <p class="close">закрыть</p>
+                <p class="x">x</p>
+            </div>
+        </div>
+        <div class="header-menu_wrap flex">
+            <div class="header-contacts flex column">
+                <div class="phone-email element">
+                    <a href="tel:+79876543210" class="contacts-phone">+7 (987) 654-32-10</a>
+                    <a href="email:info@site.ru" class="contacts-email underline">info@site.ru</a>
+                </div>
+                <div class="header-address element">
+                    <div class="address-icon"><img src="./img/map-icon.png" alt="Адрес: иконка"></div>
+                    <div class="address-text">
+                        <p>г. Санкт-Петербург, <br>Набережная
+                            Обводного канала, <br>д.199-201, лит Н, пом. 10  </p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-other flex column">
+                <div class="company-name element">
+                    <p>ООО «Архистрой» </p>
+                </div>
+                <div class="other-info element">
+                    <p>ИНН 0000000000</p>
+                    <p>КПП 0000000000</p>
+                    <p>ОГРН 0000000000</p>
+                </div>
+                <div class="header_copyright">
+                    <p>© 2019  ООО «Архистрой» </p>
+                </div>
+            </div>
+            <div class="order-call-form_wrap form-wrap">
+                <div class="form-title">
+                    <h3>Оставьте данные и мы свяжемся с Вами!</h3>
+                </div>
+                <form action="action.php">
+                    <div class="order-call__input_form-wrap flex wrap">
+                        <div class="input-wrap input">
+                            <label for="order-call__form_name">
+                                <span>*</span>
+                                <input required id="order-call__form_name" type="text" name="section-4__form_name" placeholder="Имя">
+                            </label>
+                        </div>
+                        <div class="input-wrap input">
+                            <label for="order-call__form_phone">
+                                <span>*</span>
+                                <input required id="order-call__form_phone" type="tel" name="section-4__form_phone" placeholder="Телефон" class="phone">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="order-call__input_form-agree_wrap flex">
+                        <button class="btn-form_submit" type="submit"><span>Заказать звонок</span></button>
+                        <div class="input-wrap input-checkbox">
+                            <input id="order-call__form_checkbox" type="checkbox">
+                            <label for="order-call__form_checkbox" class="flex">
+                                <span>Нажимая на кнопку, я даю свое полное согласие с <br>
+                                Политикой в отношении обработки персональных <br>
+                                данных на данном сайте</span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    <section id="section-1" class="section pp-scrollable">
     <div class="container flex">
         <div class="section-1_desc-title">
             <div class="title">
@@ -76,7 +232,7 @@
         </div>
     </div>
 </section>
-    <section id="section-2">
+    <section id="section-2" class="section pp-scrollable">
     <div class="container flex">
         <div class="section-2_left-part">
             <div class="title">
@@ -153,181 +309,179 @@
         </div>
     </div>
 </section>
-    <div class="section-3-4_wrap">
-    <section id="section-3">
-        <div class="container">
-            <div class="section-3_title">
-                <h2>Почему мансарда от <br>
-                    «Архистрой» и <span>«Velux»</span></h2>
-            </div>
-            <div class="section-3_text">
-                <p>Самый красивый вид открывается только с мансардного этажа!</p>
-            </div>
-            <div class="section-3_elements-wrap flex wrap">
-                <article class="element flex">
-                    <div class="number">
-                        <p><span>0</span>1</p>
-                    </div>
-                    <div class="text">
-                        <h3>Вентиляция в любое <br>
-                            время года</h3>
-                        <p>Окна имеют систему микрощелевого <br>
-                            проветривания, которая пропускает <br>
-                            свежий воздух даже при закрытом окне</p>
-                    </div>
-                </article>
-                <article class="element flex">
-                    <div class="number">
-                        <p><span>0</span>2</p>
-                    </div>
-                    <div class="text">
-                        <h3>На 40% больше света <br>
-                            в мансардном помещении</h3>
-                        <p>В хорошо освещаемом помещении <br>
-                            повышается продуктивность, улучшает <br>
-                            настроение, снижается риск падения зрения</p>
-                    </div>
-                </article>
-                <article class="element flex">
-                    <div class="number">
-                        <p><span>0</span>3</p>
-                    </div>
-                    <div class="text">
-                        <h3>Сохранение тепла и чистые <br>
-                            окна круглый год</h3>
-                        <p>Установка теплоизоляционных <br>
-                            материалов. Поверхность окон, <br>
-                            отталкивающая грязь и воду</p>
-                    </div>
-                </article>
-                <article class="element flex">
-                    <div class="number">
-                        <p><span>0</span>4</p>
-                    </div>
-                    <div class="text">
-                        <h3>Возможность <span>воплотить</span> <br>
-                            любые дизайнерские <span>мечты</span></h3>
-                        <p>Помещения в мансарде - самые <br>
-                            объемные, в них Вы сможете воплотить <br>
-                            любые дизайнерские задумки</p>
-                    </div>
-                </article>
-                <article class="element flex">
-                    <div class="number">
-                        <p><span>0</span>5</p>
-                    </div>
-                    <div class="text">
-                        <h3>С нами Вашей мансарде <br>
-                            не страшна непогода</h3>
-                        <p>Закаленное стекло окон <span>«VELUX»</span> – <br>
-                            надежная защита от сколов и трещин</p>
-                    </div>
-                </article>
-                <article class="element flex">
-                    <div class="number">
-                        <p><span>0</span>6</p>
-                    </div>
-                    <div class="text">
-                        <h3>Окна <span>«VELUX»</span> не текут и не <br>
-                            требуют постоянного сервиса</h3>
-                        <p>Окна изготовлены из высокопрочной сибирской <br>
-                            сосны. Окна <span>«VELUX»</span> проверены временем и <br>
-                            миллионами людей по всему миру</p>
-                    </div>
-                </article>
-            </div>
+    <section id="section-3" class="section pp-scrollable">
+    <div class="container">
+        <div class="section-3_title">
+            <h2>Почему мансарда от <br>
+                «Архистрой» и <span>«Velux»</span></h2>
         </div>
-    </section>
-    <div id="section-4">
-        <div class="container">
-            <div class="section-4_title-link flex">
-                <div class="title">
-                    <h2>Наши услуги</h2>
-                </div>
-                <div class="link flex">
-                    <div class="link-icon"><img src="./img/window-icon.png" alt="Иконка"></div>
-                    <a href="#section-5">Посмотреть возможности <br>
-                        будущей мансарды</a>
-                </div>
-            </div>
+        <div class="section-3_text">
+            <p>Самый красивый вид открывается только с мансардного этажа!</p>
         </div>
-        <div class="section-4_elements-form">
-            <div class="container flex">
-                <div class="elements-wrap flex column">
-                    <div class="element flex">
-                        <p>Подбираем и доставляем <br>
-                            мансардные окна под интерьер <br>
-                            и планировку Вашей мансарды</p>
-                    </div>
-                    <div class="element flex">
-                        <p>Составляем спецификации и <br>
-                            Техническое задание по <br>
-                            установке мансардных <br>
-                            окон <span>«Velux»</span></p>
-                    </div>
-                    <div class="element flex">
-                        <p>Подбираем элементы безопасности <br>
-                            кровли, комплектующие к мансардам – <br>
-                            все, что необходимо для строительства <br>
-                            мансарды «под ключ»</p>
-                    </div>
-                    <div class="element flex">
-                        <p>Монтаж, сервисное <br>
-                            обслуживание и замена <br>
-                            мансардных окон</p>
-                    </div>
+        <div class="section-3_elements-wrap flex wrap">
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>1</p>
                 </div>
-                <div id="section-4_form" class="form-wrap">
-                    <div class="form-title">
-                        <h3>Рассчитаем стоимость по Вашему проекту</h3>
-                    </div>
-                    <form action="">
-                        <div class="input-wrap input">
-                            <label for="section-4__form_name">
-                                <span>*</span>
-                                <input required id="section-4__form_name" type="text" name="section-4__form_name" placeholder="Имя">
-                            </label>
-                        </div>
-                        <div class="input-wrap input">
-                            <label for="section-4__form_phone">
-                                <span>*</span>
-                                <input required id="section-4__form_phone" type="tel" name="section-4__form_phone" placeholder="Телефон" class="phone">
-                            </label>
-                        </div>
-                        <div class="input-wrap input">
-                            <label for="section-4__form_email">
-                                <input id="section-4__form_email" type="email" name="section-4__form_email" placeholder="E-mail">
-                            </label>
-                        </div>
-                        <div class="input-wrap input-options">
-                            <label for="section-4__form_options">
-                                <select id="section-4__form_options" name="section-4__form_options">
-                                    <option value="">Услуга</option>
-                                    <option value="">Услуга 2</option>
-                                    <option value="">Услуга 3</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="input-wrap textarea">
-                            <label for="section-4__form_text"></label>
-                            <textarea id="section-4__form_text" name="section-4__form_text" placeholder="Описание"></textarea>
-                        </div>
-                        <div class="input-wrap input-checkbox">
-                            <input id="section-4__form_checkbox" type="checkbox">
-                            <label for="section-4__form_checkbox" class="flex">
-                                <span>Нажимая на кнопку, я даю свое полное согласие с <br>
-                                Политикой в отношении обработки персональных <br>
-                                данных на данном сайте</span>
-                            </label>
-                        </div>
-                        <button class="btn-form_submit" type="submit"><span>Рассчитать стоимость</span></button>
-                    </form>
+                <div class="text">
+                    <h3>Вентиляция в любое <br>
+                        время года</h3>
+                    <p>Окна имеют систему микрощелевого <br>
+                        проветривания, которая пропускает <br>
+                        свежий воздух даже при закрытом окне</p>
                 </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>2</p>
+                </div>
+                <div class="text">
+                    <h3>На 40% больше света <br>
+                        в мансардном помещении</h3>
+                    <p>В хорошо освещаемом помещении <br>
+                        повышается продуктивность, улучшает <br>
+                        настроение, снижается риск падения зрения</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>3</p>
+                </div>
+                <div class="text">
+                    <h3>Сохранение тепла и чистые <br>
+                        окна круглый год</h3>
+                    <p>Установка теплоизоляционных <br>
+                        материалов. Поверхность окон, <br>
+                        отталкивающая грязь и воду</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>4</p>
+                </div>
+                <div class="text">
+                    <h3>Возможность <span>воплотить</span> <br>
+                        любые дизайнерские <span>мечты</span></h3>
+                    <p>Помещения в мансарде - самые <br>
+                        объемные, в них Вы сможете воплотить <br>
+                        любые дизайнерские задумки</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>5</p>
+                </div>
+                <div class="text">
+                    <h3>С нами Вашей мансарде <br>
+                        не страшна непогода</h3>
+                    <p>Закаленное стекло окон <span>«VELUX»</span> – <br>
+                        надежная защита от сколов и трещин</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>6</p>
+                </div>
+                <div class="text">
+                    <h3>Окна <span>«VELUX»</span> не текут и не <br>
+                        требуют постоянного сервиса</h3>
+                    <p>Окна изготовлены из высокопрочной сибирской <br>
+                        сосны. Окна <span>«VELUX»</span> проверены временем и <br>
+                        миллионами людей по всему миру</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+    <section id="section-4" class="section pp-scrollable">
+    <div class="container">
+        <div class="section-4_title-link flex">
+            <div class="title">
+                <h2>Наши услуги</h2>
+            </div>
+            <div class="link flex">
+                <div class="link-icon"><img src="./img/window-icon.png" alt="Иконка"></div>
+                <a href="#section-5">Посмотреть возможности <br>
+                    будущей мансарды</a>
             </div>
         </div>
     </div>
-</div>
-    <section id="section-5">
+    <div class="section-4_elements-form">
+        <div class="container flex">
+            <div class="elements-wrap flex column">
+                <div class="element flex">
+                    <p>Подбираем и доставляем <br>
+                        мансардные окна под интерьер <br>
+                        и планировку Вашей мансарды</p>
+                </div>
+                <div class="element flex">
+                    <p>Составляем спецификации и <br>
+                        Техническое задание по <br>
+                        установке мансардных <br>
+                        окон <span>«Velux»</span></p>
+                </div>
+                <div class="element flex">
+                    <p>Подбираем элементы безопасности <br>
+                        кровли, комплектующие к мансардам – <br>
+                        все, что необходимо для строительства <br>
+                        мансарды «под ключ»</p>
+                </div>
+                <div class="element flex">
+                    <p>Монтаж, сервисное <br>
+                        обслуживание и замена <br>
+                        мансардных окон</p>
+                </div>
+            </div>
+            <div id="section-4_form" class="form-wrap">
+                <div class="form-title">
+                    <h3>Рассчитаем стоимость по Вашему проекту</h3>
+                </div>
+                <form action="">
+                    <div class="input-wrap input">
+                        <label for="section-4__form_name">
+                            <span>*</span>
+                            <input required id="section-4__form_name" type="text" name="section-4__form_name" placeholder="Имя">
+                        </label>
+                    </div>
+                    <div class="input-wrap input">
+                        <label for="section-4__form_phone">
+                            <span>*</span>
+                            <input required id="section-4__form_phone" type="tel" name="section-4__form_phone" placeholder="Телефон" class="phone">
+                        </label>
+                    </div>
+                    <div class="input-wrap input">
+                        <label for="section-4__form_email">
+                            <input id="section-4__form_email" type="email" name="section-4__form_email" placeholder="E-mail">
+                        </label>
+                    </div>
+                    <div class="input-wrap input-options">
+                        <label for="section-4__form_options">
+                            <select id="section-4__form_options" name="section-4__form_options">
+                                <option value="">Услуга</option>
+                                <option value="">Услуга 2</option>
+                                <option value="">Услуга 3</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="input-wrap textarea">
+                        <label for="section-4__form_text"></label>
+                        <textarea id="section-4__form_text" name="section-4__form_text" placeholder="Описание"></textarea>
+                    </div>
+                    <div class="input-wrap input-checkbox">
+                        <input id="section-4__form_checkbox" type="checkbox">
+                        <label for="section-4__form_checkbox" class="flex">
+                                <span>Нажимая на кнопку, я даю свое полное согласие с <br>
+                                Политикой в отношении обработки персональных <br>
+                                данных на данном сайте</span>
+                        </label>
+                    </div>
+                    <button class="btn-form_submit" type="submit"><span>Рассчитать стоимость</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="section-5" class="section pp-scrollable">
     <div class="container title-wrap flex">
         <div class="section-5__tabs-nav-title_wrap">
             <div class="title">
@@ -355,7 +509,7 @@
             </div>
         </div>
     </div>
-    <div class="container section-5__tabs-content_wrap">
+    <div id="optima" class="container section-5__tabs-content_wrap active">
         <div class="section-5__tabs-nav-2 flex">
             <span class="tab-nav-2">Дерево, ручка сверху</span>
             <span class="tab-nav-2 active">Дерево, ручка снизу</span>
@@ -363,11 +517,13 @@
         </div>
         <div class="section-5__tabs-content-2_wrap flex">
             <div class="section-5__slider-wrap">
-                <div id="section-5_slider">
+                <div class="section-5_slider owl-carousel">
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                     <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                 </div>
-                <div class="section-5_slider__prev"><img src="/img/section-5_slider_arrow-prev.png" alt="Вперед"></div>
-                <div class="section-5_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Назад"></div>
             </div>
             <div class="section-5_tabs-content-2_desc">
                 <div class="desc_text">
@@ -394,9 +550,191 @@
                 </div>
             </div>
         </div>
+        <div class="section-5__tabs-content-2_wrap active flex">
+            <div class="section-5__slider-wrap">
+                <div class="section-5_slider owl-carousel">
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                </div>
+            </div>
+            <div class="section-5_tabs-content-2_desc">
+                <div class="desc_text">
+                    <h3>Европейское двухкамерное окно 2</h3>
+                    <p>Модель GLL</p>
+                    <ul>
+                        <li>Закаленное внешнее стекло</li>
+                        <li>Стандартные уплотнители для защиты от протечек</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                    </ul>
+                    <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+                </div>
+                <div class="desc_price-link flex">
+                    <div class="price">
+                        <p>от 18 700 ₽ за окно</p>
+                    </div>
+                    <div class="link">
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <div class="desc_btn-order">
+                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="section-5__tabs-content-2_wrap flex">
+            <div class="section-5__slider-wrap">
+                <div class="section-5_slider owl-carousel">
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                </div>
+            </div>
+            <div class="section-5_tabs-content-2_desc">
+                <div class="desc_text">
+                    <h3>Европейское двухкамерное окно 3</h3>
+                    <p>Модель GLL</p>
+                    <ul>
+                        <li>Закаленное внешнее стекло</li>
+                        <li>Стандартные уплотнители для защиты от протечек</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                    </ul>
+                    <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+                </div>
+                <div class="desc_price-link flex">
+                    <div class="price">
+                        <p>от 18 700 ₽ за окно</p>
+                    </div>
+                    <div class="link">
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <div class="desc_btn-order">
+                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="premium" class="container section-5__tabs-content_wrap">
+        <div class="section-5__tabs-nav-2 flex">
+            <span class="tab-nav-2">Дерево, ручка сверху</span>
+            <span class="tab-nav-2 active">Дерево, ручка снизу</span>
+            <span class="tab-nav-2">Дерево, ручка снизу</span>
+        </div>
+        <div class="section-5__tabs-content-2_wrap flex">
+            <div class="section-5__slider-wrap">
+                <div class="section-5_slider owl-carousel">
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                </div>
+            </div>
+            <div class="section-5_tabs-content-2_desc">
+                <div class="desc_text">
+                    <h3>Европейское двухкамерное окно</h3>
+                    <p>Модель GLL</p>
+                    <ul>
+                        <li>Закаленное внешнее стекло</li>
+                        <li>Стандартные уплотнители для защиты от протечек</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                    </ul>
+                    <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+                </div>
+                <div class="desc_price-link flex">
+                    <div class="price">
+                        <p>от 18 700 ₽ за окно</p>
+                    </div>
+                    <div class="link">
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <div class="desc_btn-order">
+                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="section-5__tabs-content-2_wrap active flex">
+            <div class="section-5__slider-wrap">
+                <div class="section-5_slider owl-carousel">
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                </div>
+            </div>
+            <div class="section-5_tabs-content-2_desc">
+                <div class="desc_text">
+                    <h3>Европейское двухкамерное окно 2</h3>
+                    <p>Модель GLL</p>
+                    <ul>
+                        <li>Закаленное внешнее стекло</li>
+                        <li>Стандартные уплотнители для защиты от протечек</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                    </ul>
+                    <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+                </div>
+                <div class="desc_price-link flex">
+                    <div class="price">
+                        <p>от 18 700 ₽ за окно</p>
+                    </div>
+                    <div class="link">
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <div class="desc_btn-order">
+                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="section-5__tabs-content-2_wrap flex">
+            <div class="section-5__slider-wrap">
+                <div class="section-5_slider owl-carousel">
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                </div>
+            </div>
+            <div class="section-5_tabs-content-2_desc">
+                <div class="desc_text">
+                    <h3>Европейское двухкамерное окно 3</h3>
+                    <p>Модель GLL</p>
+                    <ul>
+                        <li>Закаленное внешнее стекло</li>
+                        <li>Стандартные уплотнители для защиты от протечек</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                    </ul>
+                    <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+                </div>
+                <div class="desc_price-link flex">
+                    <div class="price">
+                        <p>от 18 700 ₽ за окно</p>
+                    </div>
+                    <div class="link">
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <div class="desc_btn-order">
+                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
-    <section id="section-6">
+    <section id="section-6" class="section pp-scrollable">
     <div class="container">
         <div class="section-6_title">
             <h2>Бесплатная <br>
@@ -460,7 +798,7 @@
         </div>
     </div>
 </section>
-    <section id="section-7">
+    <section id="section-7" class="section pp-scrollable">
     <div class="container">
         <div class="section-7_title-link flex">
             <div class="title">
@@ -512,7 +850,7 @@
         </div>
     </div>
 </section>
-    <section id="section-8">
+    <section id="section-8" class="section pp-scrollable">
     <div class="container">
         <div class="section-8_title">
             <h2>Гарантии</h2>
@@ -557,7 +895,7 @@
         </div>
     </div>
 </section>
-    <section id="section-9">
+    <section id="section-9" class="section pp-scrollable">
     <div class="container">
         <div class="section-9_title">
             <h2>Отзывы</h2>
@@ -578,7 +916,7 @@
         </div>
     </div>
 </section>
-    <section id="section-10">
+    <section id="section-10" class="section pp-scrollable">
     <div class="container">
         <div class="section-10_elements-wrap flex">
             <div class="contacts">
@@ -663,6 +1001,115 @@
     </div>
 </section>
 </div>
+<div id="btn-window">
+    <button class="flex center"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
+</div>
+<div id="modal_order-window">
+    <div id="order-form" class="form-wrap">
+        <div class="header_btn-menu_close flex">
+            <p class="close">закрыть</p>
+            <p class="x">x</p>
+        </div>
+        <div class="form-title">
+            <h3>Подберем окно <br>под Вашу мансарду</h3>
+        </div>
+        <form action="">
+            <div class="input-wrap input">
+                <label for="order-form__form_name">
+                    <span>*</span>
+                    <input required id="order-form__form_name" type="text" name="order-form__form_name" placeholder="Имя">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form__form_phone">
+                    <span>*</span>
+                    <input required id="order-form__form_phone" type="tel" name="order-form__form_phone" placeholder="Телефон" class="phone">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form__form_email">
+                    <input id="order-form__form_email" type="email" name="order-form__form_email" placeholder="E-mail">
+                </label>
+            </div>
+            <div class="input-wrap textarea">
+                <label for="order-form__form_text"></label>
+                <textarea id="order-form__form_text" name="order-form__form_text" placeholder="Ваши пожелания"></textarea>
+            </div>
+            <div class="input-wrap input-checkbox">
+                <input id="order-form__form_checkbox" type="checkbox">
+                <label for="order-form__form_checkbox" class="flex">
+                    <span>Нажимая на кнопку, я даю свое полное согласие с <br>
+                        Политикой в отношении обработки персональных <br>
+                        данных на данном сайте</span>
+                </label>
+            </div>
+            <button class="btn-form_submit" type="submit"><span>Рассчитать стоимость</span></button>
+        </form>
+    </div>
+</div>
+<div id="modal_order-window_section-5">
+    <div id="order-form_section-5" class="form-wrap">
+        <div class="header_btn-menu_close flex">
+            <p class="close">закрыть</p>
+            <p class="x">x</p>
+        </div>
+        <div class="form-title">
+            <h3>Заказать <br>
+                Название/модель окна</h3>
+        </div>
+        <form action="">
+            <div class="input-wrap input">
+                <label for="order-form_section-5__form_name">
+                    <span>*</span>
+                    <input required id="order-form_section-5__form_name" type="text" name="order-form__form_name" placeholder="Имя">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form_section-5__form_phone">
+                    <span>*</span>
+                    <input required id="order-form_section-5__form_phone" type="tel" name="order-form__form_phone" placeholder="Телефон" class="phone">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form_section-5__form_email">
+                    <input id="order-form_section-5__form_email" type="email" name="order-form__form_email" placeholder="E-mail">
+                </label>
+            </div>
+            <div class="input-wrap textarea">
+                <label for="order-form_section-5__form_text"></label>
+                <textarea id="order-form_section-5__form_text" name="order-form__form_text" placeholder="Ваши пожелания"></textarea>
+            </div>
+            <div class="input-wrap input-checkbox">
+                <input id="order-form_section-5__form_checkbox" type="checkbox">
+                <label for="order-form_section-5__form_checkbox" class="flex">
+                    <span>Нажимая на кнопку, я даю свое полное согласие с <br>
+                        Политикой в отношении обработки персональных <br>
+                        данных на данном сайте</span>
+                </label>
+            </div>
+            <button class="btn-form_submit" type="submit"><span>Рассчитать стоимость</span></button>
+        </form>
+    </div>
+</div>
+<div id="modal_project-gallery">
+    <div class="container">
+        <div class="project-gallery_title">
+            <h2>Галерея проектов</h2>
+        </div>
+        <div class="project-gallery__slider-wrap">
+            <div id="project-gallery_slider">
+                <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+            </div>
+            <div class="section-5_slider__prev"><img src="/img/section-5_slider_arrow-prev.png" alt="Вперед"></div>
+            <div class="section-5_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Назад"></div>
+        </div>
+    </div>
+</div>
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/jquery.pagepiling.js"></script>
+<script src="libs/jquery.maskedinput.min.js"></script>
+<script src="libs/owl.carousel.min.js"></script>
+<script src="js/scripts.js"></script>
 <script id="__bs_script__">//<![CDATA[
 document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));
 //]]></script>

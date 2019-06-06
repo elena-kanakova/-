@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Архистрой</title>
     <!-- @if NODE_ENV='development' -->
+    <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
+    <link rel="stylesheet" href="libs/owl.carousel.min.css">
     <link rel="stylesheet" href="css/base.css">
     <!-- @endif -->
 
     <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="libs/fullpage.css">
+    <link rel="stylesheet" href="libs/owl.carousel.min.css">
     <link rel="stylesheet" href="css/base.css">
     <!-- @endif -->
 </head>
 <body>
-<div id="wrapper">
+<div id="pagepiling" class="wrapper">
     @@include('./_header.html')
     @@include('./_section-1.html')
     @@include('./_section-2.html')
-    @@include('./_section-3-4.html')
+    @@include('./_section-3.html')
+    @@include('./_section-4.html')
     @@include('./_section-5.html')
     @@include('./_section-6.html')
     @@include('./_section-7.html')
@@ -25,6 +30,115 @@
     @@include('./_section-9.html')
     @@include('./_section-10.html')
 </div>
+<div id="btn-window">
+    <button class="flex center"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
+</div>
+<div id="modal_order-window">
+    <div id="order-form" class="form-wrap">
+        <div class="header_btn-menu_close flex">
+            <p class="close">закрыть</p>
+            <p class="x">x</p>
+        </div>
+        <div class="form-title">
+            <h3>Подберем окно <br>под Вашу мансарду</h3>
+        </div>
+        <form action="">
+            <div class="input-wrap input">
+                <label for="order-form__form_name">
+                    <span>*</span>
+                    <input required id="order-form__form_name" type="text" name="order-form__form_name" placeholder="Имя">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form__form_phone">
+                    <span>*</span>
+                    <input required id="order-form__form_phone" type="tel" name="order-form__form_phone" placeholder="Телефон" class="phone">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form__form_email">
+                    <input id="order-form__form_email" type="email" name="order-form__form_email" placeholder="E-mail">
+                </label>
+            </div>
+            <div class="input-wrap textarea">
+                <label for="order-form__form_text"></label>
+                <textarea id="order-form__form_text" name="order-form__form_text" placeholder="Ваши пожелания"></textarea>
+            </div>
+            <div class="input-wrap input-checkbox">
+                <input id="order-form__form_checkbox" type="checkbox">
+                <label for="order-form__form_checkbox" class="flex">
+                    <span>Нажимая на кнопку, я даю свое полное согласие с <br>
+                        Политикой в отношении обработки персональных <br>
+                        данных на данном сайте</span>
+                </label>
+            </div>
+            <button class="btn-form_submit" type="submit"><span>Рассчитать стоимость</span></button>
+        </form>
+    </div>
+</div>
+<div id="modal_order-window_section-5">
+    <div id="order-form_section-5" class="form-wrap">
+        <div class="header_btn-menu_close flex">
+            <p class="close">закрыть</p>
+            <p class="x">x</p>
+        </div>
+        <div class="form-title">
+            <h3>Заказать <br>
+                Название/модель окна</h3>
+        </div>
+        <form action="">
+            <div class="input-wrap input">
+                <label for="order-form_section-5__form_name">
+                    <span>*</span>
+                    <input required id="order-form_section-5__form_name" type="text" name="order-form__form_name" placeholder="Имя">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form_section-5__form_phone">
+                    <span>*</span>
+                    <input required id="order-form_section-5__form_phone" type="tel" name="order-form__form_phone" placeholder="Телефон" class="phone">
+                </label>
+            </div>
+            <div class="input-wrap input">
+                <label for="order-form_section-5__form_email">
+                    <input id="order-form_section-5__form_email" type="email" name="order-form__form_email" placeholder="E-mail">
+                </label>
+            </div>
+            <div class="input-wrap textarea">
+                <label for="order-form_section-5__form_text"></label>
+                <textarea id="order-form_section-5__form_text" name="order-form__form_text" placeholder="Ваши пожелания"></textarea>
+            </div>
+            <div class="input-wrap input-checkbox">
+                <input id="order-form_section-5__form_checkbox" type="checkbox">
+                <label for="order-form_section-5__form_checkbox" class="flex">
+                    <span>Нажимая на кнопку, я даю свое полное согласие с <br>
+                        Политикой в отношении обработки персональных <br>
+                        данных на данном сайте</span>
+                </label>
+            </div>
+            <button class="btn-form_submit" type="submit"><span>Рассчитать стоимость</span></button>
+        </form>
+    </div>
+</div>
+<div id="modal_project-gallery">
+    <div class="container">
+        <div class="project-gallery_title">
+            <h2>Галерея проектов</h2>
+        </div>
+        <div class="project-gallery__slider-wrap">
+            <div id="project-gallery_slider">
+                <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+            </div>
+            <div class="section-5_slider__prev"><img src="/img/section-5_slider_arrow-prev.png" alt="Вперед"></div>
+            <div class="section-5_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Назад"></div>
+        </div>
+    </div>
+</div>
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/jquery.pagepiling.js"></script>
+<script src="libs/jquery.maskedinput.min.js"></script>
+<script src="libs/owl.carousel.min.js"></script>
+<script src="js/scripts.js"></script>
 <script id="__bs_script__">//<![CDATA[
 document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));
 //]]></script>
