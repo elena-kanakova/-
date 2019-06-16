@@ -6,33 +6,14 @@
     <title>Архистрой</title>
     <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
     <link rel="stylesheet" href="libs/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/magnific-popup.min.css">
     <link rel="stylesheet" href="css/base.css">
 
 </head>
 <body>
 <div id="pagepiling" class="wrapper">
-    <header id="main-header">
-    <div class="container flex">
-        <div class="main-header_left flex">
-            <div class="header-logo flex center">
-                <a href="#">Архистрой <sup>&#169;</sup></a>
-            </div>
-            <div class="main-header_company-text">
-                <p>Строительство и реконструкция <br>
-                    мансард в Санкт-Петербурге</p>
-            </div>
-        </div>
-        <div class="main-header_right flex">
-            <div class="header_call-me flex">
-                <p>Связаться с нами</p>
-                <button class="modal-link" data-href="order-call"><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
-            </div>
-            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
-            <div class="header_btn-menu flex column"><span></span><span></span><span></span></div>
-        </div>
-    </div>
-</header>
-<header id="header-open" class="header-open_wrap">
+    <div class="overlay"></div>
+    <header id="header-open" class="header-open_wrap modal-up">
     <div class="container">
         <div class="header-wrap flex">
             <div class="main-header_left flex">
@@ -44,7 +25,7 @@
                         мансард в Санкт-Петербурге</p>
                 </div>
             </div>
-            <div class="main-header_right header_btn-menu_close flex">
+            <div class="main-header_right header_btn-menu_close js-close-btn flex">
                 <p class="close">закрыть</p>
                 <p class="x">x</p>
             </div>
@@ -52,20 +33,20 @@
         <div class="header-menu_wrap flex">
             <div class="header-menu">
                 <ul class="element flex column">
-                    <li><a href="#section-1" class="underline">Главная</a></li>
-                    <li><a href="#section-2">О компании</a></li>
-                    <li><a href="#section-3">Преимущества</a></li>
-                    <li><a href="#section-4">Наши услуги</a></li>
-                    <li><a href="#section-5">Каталог окон</a></li>
+                    <li data-menuanchor="section-1" class="active"><a href="#section-1" class="underline js-menu-link">Главная</a></li>
+                    <li data-menuanchor="section-2"><a href="#section-2" class="js-menu-link">О компании</a></li>
+                    <li data-menuanchor="section-3"><a href="#section-3" class="js-menu-link">Преимущества</a></li>
+                    <li data-menuanchor="section-4"><a href="#section-4" class="js-menu-link">Наши услуги</a></li>
+                    <li data-menuanchor="section-5"><a href="#section-5" class="js-menu-link">Каталог окон</a></li>
                 </ul>
             </div>
             <div class="header-menu">
                 <ul class="element flex column">
-                    <li><a href="#order-call" class="red">Бесплатная консультация</a></li>
-                    <li><a href="#section-7">Наши проекты</a></li>
-                    <li><a href="#section-8">Гарантии</a></li>
-                    <li><a href="#section-9">Отзывы</a></li>
-                    <li><a href="#section-10">Контакты</a></li>
+                    <li data-menuanchor="section-6"><a href="#section-6" class="red js-menu-link">Бесплатная консультация</a></li>
+                    <li data-menuanchor="section-7"><a href="#section-7" class="js-menu-link">Наши проекты</a></li>
+                    <li data-menuanchor="section-8"><a href="#section-8" class="js-menu-link">Гарантии</a></li>
+                    <li data-menuanchor="section-9"><a href="#section-9" class="js-menu-link">Отзывы</a></li>
+                    <li data-menuanchor="section-10"><a href="#section-10" class="js-menu-link">Контакты</a></li>
                 </ul>
             </div>
             <div class="header-contacts flex column">
@@ -107,7 +88,7 @@
         </div>
     </div>
 </header>
-<div id="order-call" class="header-open_wrap">
+<div id="order-call" class="header-open_wrap modal-up">
     <div class="container">
         <div class="header-wrap flex">
             <div class="main-header_left flex">
@@ -119,7 +100,7 @@
                         мансард в Санкт-Петербурге</p>
                 </div>
             </div>
-            <div class="main-header_right header_btn-menu_close flex">
+            <div class="main-header_right header_btn-menu_close js-close-btn flex">
                 <p class="close">закрыть</p>
                 <p class="x">x</p>
             </div>
@@ -187,30 +168,51 @@
     </div>
 </div>
     <section id="section-1" class="section pp-scrollable">
+    <header class="main-header">
     <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
+    <div class="container section-1_text-wrap flex">
         <div class="section-1_desc-title">
-            <div class="title">
+            <div class="title wow animated fadeInLeft">
                 <h1>Светлая мансарда <br>
                     «под ключ» по Вашему <br>
                     уникальному проекту</h1>
             </div>
-            <div class="desc">
+            <div class="desc wow animated fadeInLeft">
                 <p>Официальный дилер производителя <br>
                     мансардных окон №1 в мире <span>«VELUX»</span></p>
             </div>
         </div>
-        <div class="section-1_text flex">
+        <div class="section-1_text flex wow animated fadeInRight">
             <div class="left">
                 <p>Больше света <br>
                     в помещении <br>
                     на целых</p>
             </div>
-            <div class="right">
+            <div class="right wow animated fadeInRight">
                 <p>40%</p>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container wow animated fadeInLeft">
         <div class="section-1_garant flex center">
             <div class="garant-icon">
                 <img src="./img/garant-icon.png" alt="Гарантия: иконка">
@@ -221,7 +223,7 @@
             </div>
         </div>
         <div class="section-1_more-address flex">
-            <button class="btn-more"><span>Узнать подробнее</span><img src="./img/arrow.png" alt="Стрелка: иконка"></button>
+            <a href="#section-2" class="btn-more flex center"><span>Узнать подробнее</span><img src="./img/arrow.png" alt="Стрелка: иконка"></a>
             <div class="address flex">
                 <div class="address-icon"><img src="./img/map-icon.png" alt="Адрес: иконка"></div>
                 <div class="address-text">
@@ -233,6 +235,27 @@
     </div>
 </section>
     <section id="section-2" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container flex">
         <div class="section-2_left-part">
             <div class="title">
@@ -282,7 +305,7 @@
                             <span>50 лет</span></p>
                     </div>
                 </div>
-                <div class="element">
+                <div class="element wow animated fadeInLeft">
                     <div class="icon"><img src="./img/section-2_element-6.png" alt="Иконка"></div>
                     <div class="text">
                         <p>Бесплатная доставка от 1 окна по Санкт-Петербургу и Ленинградской области</p>
@@ -310,6 +333,27 @@
     </div>
 </section>
     <section id="section-3" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container">
         <div class="section-3_title">
             <h2>Почему мансарда от <br>
@@ -393,7 +437,7 @@
         </div>
     </div>
 </section>
-    <section id="section-4" class="section pp-scrollable">
+<section id="section-4" class="section pp-scrollable">
     <div class="container">
         <div class="section-4_title-link flex">
             <div class="title">
@@ -481,7 +525,133 @@
         </div>
     </div>
 </section>
+    <section id="section-3" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
+    <div class="container">
+        <div class="section-3_title">
+            <h2>Почему мансарда от <br>
+                «Архистрой» и <span>«Velux»</span></h2>
+        </div>
+        <div class="section-3_text">
+            <p>Самый красивый вид открывается только с мансардного этажа!</p>
+        </div>
+        <div class="section-3_elements-wrap flex wrap">
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>1</p>
+                </div>
+                <div class="text">
+                    <h3>Вентиляция в любое <br>
+                        время года</h3>
+                    <p>Окна имеют систему микрощелевого <br>
+                        проветривания, которая пропускает <br>
+                        свежий воздух даже при закрытом окне</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>2</p>
+                </div>
+                <div class="text">
+                    <h3>На 40% больше света <br>
+                        в мансардном помещении</h3>
+                    <p>В хорошо освещаемом помещении <br>
+                        повышается продуктивность, улучшает <br>
+                        настроение, снижается риск падения зрения</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>3</p>
+                </div>
+                <div class="text">
+                    <h3>Сохранение тепла и чистые <br>
+                        окна круглый год</h3>
+                    <p>Установка теплоизоляционных <br>
+                        материалов. Поверхность окон, <br>
+                        отталкивающая грязь и воду</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>4</p>
+                </div>
+                <div class="text">
+                    <h3>Возможность <span>воплотить</span> <br>
+                        любые дизайнерские <span>мечты</span></h3>
+                    <p>Помещения в мансарде - самые <br>
+                        объемные, в них Вы сможете воплотить <br>
+                        любые дизайнерские задумки</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>5</p>
+                </div>
+                <div class="text">
+                    <h3>С нами Вашей мансарде <br>
+                        не страшна непогода</h3>
+                    <p>Закаленное стекло окон <span>«VELUX»</span> – <br>
+                        надежная защита от сколов и трещин</p>
+                </div>
+            </article>
+            <article class="element flex">
+                <div class="number">
+                    <p><span>0</span>6</p>
+                </div>
+                <div class="text">
+                    <h3>Окна <span>«VELUX»</span> не текут и не <br>
+                        требуют постоянного сервиса</h3>
+                    <p>Окна изготовлены из высокопрочной сибирской <br>
+                        сосны. Окна <span>«VELUX»</span> проверены временем и <br>
+                        миллионами людей по всему миру</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
     <section id="section-5" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container title-wrap flex">
         <div class="section-5__tabs-nav-title_wrap">
             <div class="title">
@@ -503,7 +673,7 @@
             <div class="title-link flex">
                 <div class="title-link_icon"><img src="/img/section-5_title-link_icon.png" alt="Иконка"></div>
                 <div class="title-link_link">
-                    <a href="#">Гарантии от компании <br>
+                    <a href="#section-9" data-menuanchor="section-9">Гарантии от компании <br>
                         «Архистрой»</a>
                 </div>
             </div>
@@ -546,7 +716,7 @@
                     </div>
                 </div>
                 <div class="desc_btn-order">
-                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                    <button class="desc_btn-order_btn js-link-modal_left-right" data-href="modal_order-window_section-5"><span>Заказать</span></button>
                 </div>
             </div>
         </div>
@@ -581,7 +751,7 @@
                     </div>
                 </div>
                 <div class="desc_btn-order">
-                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                    <button class="desc_btn-order_btn js-link-modal_left-right" data-href="modal_order-window_section-5"><span>Заказать</span></button>
                 </div>
             </div>
         </div>
@@ -616,7 +786,7 @@
                     </div>
                 </div>
                 <div class="desc_btn-order">
-                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                    <button class="desc_btn-order_btn js-link-modal_left-right" data-href="modal_order-window_section-5"><span>Заказать</span></button>
                 </div>
             </div>
         </div>
@@ -658,7 +828,7 @@
                     </div>
                 </div>
                 <div class="desc_btn-order">
-                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                    <button class="desc_btn-order_btn js-link-modal_left-right" data-href="modal_order-window_section-5"><span>Заказать</span></button>
                 </div>
             </div>
         </div>
@@ -693,7 +863,7 @@
                     </div>
                 </div>
                 <div class="desc_btn-order">
-                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                    <button class="desc_btn-order_btn js-link-modal_left-right" data-href="modal_order-window_section-5"><span>Заказать</span></button>
                 </div>
             </div>
         </div>
@@ -728,13 +898,34 @@
                     </div>
                 </div>
                 <div class="desc_btn-order">
-                    <button class="desc_btn-order_btn"><span>Заказать</span></button>
+                    <button class="desc_btn-order_btn js-link-modal_left-right" data-href="modal_order-window_section-5"><span>Заказать</span></button>
                 </div>
             </div>
         </div>
     </div>
 </section>
     <section id="section-6" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container">
         <div class="section-6_title">
             <h2>Бесплатная <br>
@@ -799,6 +990,27 @@
     </div>
 </section>
     <section id="section-7" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container">
         <div class="section-7_title-link flex">
             <div class="title">
@@ -806,8 +1018,8 @@
             </div>
             <div class="link flex">
                 <div class="link-icon"><img src="./img/all-project_icon.png" alt="Иконка"></div>
-                <a href="#">Посмотреть все проекты <br>
-                    компании «Архистрой»</a>
+                <button href="#modal_project-gallery" class="js-modal-link_btn" data-href="modal_project-gallery">Посмотреть все проекты <br>
+                    компании «Архистрой»</button>
             </div>
         </div>
         <div class="section-7_content flex">
@@ -851,6 +1063,27 @@
     </div>
 </section>
     <section id="section-8" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container">
         <div class="section-8_title">
             <h2>Гарантии</h2>
@@ -860,20 +1093,66 @@
                 <h3>Наши сертификаты и паспорта качества</h3>
             </div>
             <div class="section-8_slider__slider-wrap">
-                <div class="slider flex">
-                    <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
-                    <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
-                    <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
+                <div id="slider_certificates" class="slider owl-carousel flex">
+                    <div class="slide">
+                        <a href="img/section-8_photo_sert.png">
+                            <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="img/section-8_photo_sert.png">
+                            <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="img/section-8_photo_sert.png">
+                            <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <a href="img/section-8_photo_sert.png">
+                            <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                        </a>
+                    </div>
                 </div>
-                <div class="section-8_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Вперед"></div>
             </div>
         </div>
         <div class="section-8_slider-wrap">
             <div class="title">
                 <h3>Команда компании «Архистрой»</h3>
             </div>
-            <div class="section-8_slider__slider-wrap">
-                <div class="section-8_slider__slider">
+            <div class="section-8_slider__slider">
+                <div id="slider_team" class="slider owl-carousel">
+                    <div class="slide flex">
+                        <div class="photo">
+                            <img src="img/section-8_photo_dir.jpg" alt="Фото">
+                        </div>
+                        <div class="text">
+                            <div class="title">
+                                <h4>Иванов Иван</h4>
+                                <p>Генеральны директор</p>
+                            </div>
+                            <p>Описание несколько строчек</p>
+                            <p>Описание несколько строчек</p>
+                            <p>Описание несколько строчек</p>
+                            <p>Описание несколько строчек</p>
+                        </div>
+                    </div>
+                    <div class="slide flex">
+                        <div class="photo">
+                            <img src="img/section-8_photo_dir.jpg" alt="Фото">
+                        </div>
+                        <div class="text">
+                            <div class="title">
+                                <h4>Иванов Иван</h4>
+                                <p>Генеральны директор</p>
+                            </div>
+                            <p>Описание несколько строчек</p>
+                            <p>Описание несколько строчек</p>
+                            <p>Описание несколько строчек</p>
+                            <p>Описание несколько строчек</p>
+                        </div>
+                    </div>
                     <div class="slide flex">
                         <div class="photo">
                             <img src="img/section-8_photo_dir.jpg" alt="Фото">
@@ -890,12 +1169,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-8_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Вперед"></div>
             </div>
         </div>
     </div>
 </section>
     <section id="section-9" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container">
         <div class="section-9_title">
             <h2>Отзывы</h2>
@@ -904,19 +1203,66 @@
             <p>Отзывы о работе компании «Архистрой»</p>
         </div>
         <div class="section-9_slider__slider-wrap">
-            <div class="slider flex wrap">
-                <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
-                <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
-                <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
-                <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
-                <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
-                <div class="slide"><img src="img/section-8_photo_sert.png" alt="Сертификат"></div>
+            <div id="slider_opinions" class="slider owl-carousel flex wrap">
+                <div class="slide flex column">
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                </div>
+                <div class="slide flex column">
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                </div>
+                <div class="slide flex column">
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                </div>
+                <div class="slide flex column">
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                    <a href="img/section-8_photo_sert.png">
+                        <img src="img/section-8_photo_sert.png" alt="Сертификат">
+                    </a>
+                </div>
             </div>
             <div class="section-9_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Вперед"></div>
         </div>
     </div>
 </section>
     <section id="section-10" class="section pp-scrollable">
+    <header class="main-header">
+    <div class="container flex">
+        <div class="main-header_left flex">
+            <div class="header-logo flex center">
+                <a href="#">Архистрой <sup>&#169;</sup></a>
+            </div>
+            <div class="main-header_company-text">
+                <p>Строительство и реконструкция <br>
+                    мансард в Санкт-Петербурге</p>
+            </div>
+        </div>
+        <div class="main-header_right flex">
+            <div class="header_call-me js-link-modal_up flex" data-href="order-call">
+                <p>Связаться с нами</p>
+                <button><img src="./img/btn-call.png" alt="Иконка: Позвоните нам"></button>
+            </div>
+            <div class="header_phone"><a href="tel:+79876543210">+7 (987) 654-32-10</a></div>
+            <div class="header_btn-menu js-link-modal_up flex column" data-href="header-open"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</header>
     <div class="container">
         <div class="section-10_elements-wrap flex">
             <div class="contacts">
@@ -1000,13 +1346,16 @@
         </div>
     </div>
 </section>
+    <div id="next-section">
+        <p>далее</p>
+    </div>
 </div>
 <div id="btn-window">
-    <button class="flex center"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
+    <button class="flex center js-link-modal_left-right" data-href="modal_order-window"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
 </div>
-<div id="modal_order-window">
+<div id="modal_order-window" class="modal-left-right">
     <div id="order-form" class="form-wrap">
-        <div class="header_btn-menu_close flex">
+        <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
             <p class="x">x</p>
         </div>
@@ -1047,9 +1396,9 @@
         </form>
     </div>
 </div>
-<div id="modal_order-window_section-5">
+<div id="modal_order-window_section-5" class="modal-left-right">
     <div id="order-form_section-5" class="form-wrap">
-        <div class="header_btn-menu_close flex">
+        <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
             <p class="x">x</p>
         </div>
@@ -1091,7 +1440,7 @@
         </form>
     </div>
 </div>
-<div id="modal_project-gallery">
+<div id="modal_project-gallery" class="modal">
     <div class="container">
         <div class="project-gallery_title">
             <h2>Галерея проектов</h2>
@@ -1107,8 +1456,10 @@
 </div>
 <script src="libs/jquery-3.2.1.min.js"></script>
 <script src="libs/jquery.pagepiling.js"></script>
+<script src="libs/wow.min.js"></script>
 <script src="libs/jquery.maskedinput.min.js"></script>
 <script src="libs/owl.carousel.min.js"></script>
+<script src="libs/magnific.min.js"></script>
 <script src="js/scripts.js"></script>
 <script id="__bs_script__">//<![CDATA[
 document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));

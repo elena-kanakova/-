@@ -31,6 +31,18 @@
 .section-9_slider__slider-wrap {
   position: relative;
   max-width: 660px;
+
+  .slider {
+    padding-right: 60px;
+
+    .slide {
+      margin-right: 20px;
+      
+      img {
+        max-width: 190px;
+      }
+    }
+  }
 }
 
 .section-9_slider__next {

@@ -35,6 +35,15 @@
       color: $color-grey;
     }
   }
+
+  .slider {
+    padding-right: 60px;
+    .slide {
+      img {
+        max-width: 190px;
+      }
+    }
+  }
 }
 
 .section-8_slider__next {

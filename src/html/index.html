@@ -7,18 +7,21 @@
     <!-- @if NODE_ENV='development' -->
     <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
     <link rel="stylesheet" href="libs/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/magnific-popup.min.css">
     <link rel="stylesheet" href="css/base.css">
     <!-- @endif -->
 
     <!-- @if NODE_ENV='production' -->
-    <link rel="stylesheet" href="libs/fullpage.css">
+    <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
     <link rel="stylesheet" href="libs/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/magnific-popup.min.css">
     <link rel="stylesheet" href="css/base.css">
     <!-- @endif -->
 </head>
 <body>
 <div id="pagepiling" class="wrapper">
-    @@include('./_header.html')
+    <div class="overlay"></div>
+    @@include('./_header-open.html')
     @@include('./_section-1.html')
     @@include('./_section-2.html')
     @@include('./_section-3.html')
@@ -29,13 +32,16 @@
     @@include('./_section-8.html')
     @@include('./_section-9.html')
     @@include('./_section-10.html')
+    <div id="next-section">
+        <p>далее</p>
+    </div>
 </div>
 <div id="btn-window">
-    <button class="flex center"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
+    <button class="flex center js-link-modal_left-right" data-href="modal_order-window"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
 </div>
-<div id="modal_order-window">
+<div id="modal_order-window" class="modal-left-right">
     <div id="order-form" class="form-wrap">
-        <div class="header_btn-menu_close flex">
+        <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
             <p class="x">x</p>
         </div>
@@ -76,9 +82,9 @@
         </form>
     </div>
 </div>
-<div id="modal_order-window_section-5">
+<div id="modal_order-window_section-5" class="modal-left-right">
     <div id="order-form_section-5" class="form-wrap">
-        <div class="header_btn-menu_close flex">
+        <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
             <p class="x">x</p>
         </div>
@@ -120,7 +126,7 @@
         </form>
     </div>
 </div>
-<div id="modal_project-gallery">
+<div id="modal_project-gallery" class="modal">
     <div class="container">
         <div class="project-gallery_title">
             <h2>Галерея проектов</h2>
@@ -136,8 +142,10 @@
 </div>
 <script src="libs/jquery-3.2.1.min.js"></script>
 <script src="libs/jquery.pagepiling.js"></script>
+<script src="libs/wow.min.js"></script>
 <script src="libs/jquery.maskedinput.min.js"></script>
 <script src="libs/owl.carousel.min.js"></script>
+<script src="libs/magnific.min.js"></script>
 <script src="js/scripts.js"></script>
 <script id="__bs_script__">//<![CDATA[
 document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));

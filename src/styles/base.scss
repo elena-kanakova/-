@@ -265,25 +265,38 @@ $breakpoints: (
   flex-wrap: wrap;
 }
 
-/*.section {
-  position: fixed;
-  height: 100vh !important;
-  overflow: auto;
+.section {
+  overflow-x: hidden;
 }
 
-.section.active {
-  z-index: 10;
+/* Общие классы */
+
+::-webkit-scrollbar { /* chrome based */
+  width: 0px;  /* ширина scrollbar'a */
+  background: transparent;  /* опционально */
 }
 
-#section-10 {
-  background: white;
-}*/
+html {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
 
   /*Контейнер для всего сайта */
   .wrapper {
     z-index: 0;
     width: 100%;
     overflow: hidden;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255,255,255,.5);
   }
 
   .container {
@@ -357,11 +370,16 @@ $breakpoints: (
   }
 
   /* Шапка */
-  #main-header {
+.main-header.js-scroll {
+  background: rgba(255,255,255,.9);
+}
+
+.main-header {
     padding-top: 28px;
+    //padding: 10px 0;
     width: 100%;
-    position: fixed;
-    z-index: 10;
+    //position: fixed;
+    z-index: 998;
     .container {
       padding: 0 10px;
       justify-content: space-between;
@@ -451,6 +469,8 @@ $breakpoints: (
 
   .header_call-me {
     width: 61px;
+    height: 61px;
+    cursor: pointer;
 
     @extend %btn-general;
     position: relative;
@@ -460,6 +480,7 @@ $breakpoints: (
 
     &:hover {
       width: 261px;
+      height: 61px;
       p {
         opacity: 1;
         visibility: visible;
@@ -501,6 +522,8 @@ $breakpoints: (
   .header_btn-menu {
     align-items: flex-end;
     margin-left: 56px;
+    cursor: pointer;
+
     span {
       display: block;
       background: $color-red;
@@ -520,6 +543,10 @@ $breakpoints: (
 
 #header-open {
   display: none;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background: white;
 
   @include mq('tablet-wide') {
     height: 100%;
@@ -532,10 +559,6 @@ $breakpoints: (
 }
 
 .header-open_wrap {
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-  background: white;
 
   .container {
     padding: 0 10px;
@@ -568,6 +591,8 @@ $breakpoints: (
 
 .header_btn-menu_close {
   align-items: center;
+  cursor: pointer;
+
   .close {
     margin-top: 5px;
     font: 18px $font;
@@ -724,6 +749,11 @@ $breakpoints: (
 
 #order-call {
   display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: white;
 
   @include mq-custom(1200px) {
     height: 100%;
@@ -878,38 +908,68 @@ $breakpoints: (
 
 #btn-window {
   position: fixed;
-  z-index: 2;
+  z-index: 998;
   top: 50%;
   transform: translateY(-50%);
   right: -41px;
+
+  @include mq-custom(1920px) {
+    top: auto;
+    bottom: 20px;
+    right: -31px;
+    transform: translateY(0);
+  }
 
   button {
     @extend %btn-general;
     border: none;
     width: 269px;
+    cursor: pointer;
+
+    @include mq-custom(1920px) {
+      width: 200px;
+    }
 
     img {
-      margin-left: -25px;
+      margin-left: -30px;
+
+      @include mq-custom(1920px) {
+        max-width: 25px;
+      }
     }
 
     span {
       margin-left: 10px;
       font: 18px $font-2;
       color: white;
+
+      @include mq-custom(1920px) {
+        margin-left: 5px;
+        font: 14px GeometriaM, sans-serif;
+        color: white;
+      }
     }
   }
 }
 
-#modal_order-window {
-  display: none;
-  position: fixed;
-  z-index: 20;
-  top: 0;
+#modal_order-window.open {
+  visibility: visible;
   right: 0;
+  transition: all 1s linear;
+}
+
+#modal_order-window {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -100%;
   height: 100%;
+  visibility: hidden;
+  width: auto;
   max-width: 570px;
   padding: 54px 100px;
   background: white;
+  transition: all 1s linear;
 
   @include mq-custom(1920px) {
     padding: 54px 80px;
@@ -994,40 +1054,24 @@ $breakpoints: (
   }
 }
 
-#btn-window {
-  position: fixed;
-  z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -41px;
-
-  button {
-    @extend %btn-general;
-    border: none;
-    width: 269px;
-
-    img {
-      margin-left: -25px;
-    }
-
-    span {
-      margin-left: 10px;
-      font: 18px $font-2;
-      color: white;
-    }
-  }
+#modal_order-window_section-5.open {
+  visibility: visible;
+  right: 0;
+  transition: all .2s linear;
 }
 
 #modal_order-window_section-5 {
-  display: none;
   position: fixed;
-  z-index: 20;
+  z-index: 999;
   top: 0;
-  right: 0;
+  right: -100%;
   height: 100%;
+  width: auto;
   max-width: 570px;
+  visibility: hidden;
   padding: 54px 100px;
   background: white;
+  transition: all .2s linear;
 
   @include mq-custom(1920px) {
     padding: 54px 80px;
@@ -1116,11 +1160,14 @@ $breakpoints: (
 #modal_project-gallery {
   display: none;
   position: absolute;
+  z-index: 999;
   width: 100%;
   height: 100%;
-  top: 50%;
+  top: -50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .project-gallery_title {
@@ -1150,6 +1197,34 @@ $breakpoints: (
 
     img {
       display: block;
+    }
+  }
+}
+
+#next-section {
+  position: fixed;
+  z-index: 996;
+  right: 320px;
+  bottom: 260px;
+
+  @include mq-custom(1919px) {
+    display: none;
+  }
+
+  p {
+    position: relative;
+    font: 18px $font;
+    font-weight: 400;
+    color: $color-red;
+    writing-mode: tb-rl;
+    transform:rotate(180deg);
+
+    &:after {
+      @include pseudo(2,3px,auto,auto,55px);
+      height: 260px;
+      width: 2px;
+      background: $color-red;
+      transform: rotate(180deg);
     }
   }
 }

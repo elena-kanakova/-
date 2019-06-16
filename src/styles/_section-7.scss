@@ -37,12 +37,15 @@
       margin-top: 30px;
     }
 
-    a {
+    button {
       margin-left: 20px;
       font: 18px $font;
       font-weight: 500;
       color: $color-red;
       text-decoration: underline;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
   }
 }
