@@ -20,6 +20,7 @@
 }
 
 .section-2_left-part {
+  padding-top: 105px;
   padding-bottom: 30px;
   width: 82%;
   flex: 1 1 82%;
@@ -40,7 +41,6 @@
 
   .title {
     position: relative;
-    margin-top: 85px;
 
     @include title-triangle;
 

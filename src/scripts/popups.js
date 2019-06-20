@@ -26,6 +26,19 @@ $(document).ready(function() {
         $(id).css('top', window.scrollY + height + 'px');
     });
 
+    $('.js-modal-about-link_btn').click(function(e) {
+        e.preventDefault();
+
+        var id = '#about-project-' + $(this).attr('data-href');
+        var id2 = $(this).offset().top,
+            height = window.innerHeight / 2;
+
+        $('html').addClass('fixed');
+        $('.overlay').fadeIn(200);
+        $(id).fadeIn(500);
+        $(id).css('top', window.scrollY + height + 'px');
+    });
+
     $('.js-link-modal_up').click(function(e) {
         e.preventDefault();
 

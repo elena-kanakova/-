@@ -3,12 +3,15 @@
   height: 100%;
   padding-top: 225px;
   padding-bottom: 60px;
-  background: url("../img/section-1_bg.jpg") center top no-repeat;
   box-sizing: border-box;
+  background-image: url("../img/section-1_bg-dark.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
   background-size: 1920px 100%;
 
   .container {
     position: relative;
+    z-index: 2;
     justify-content: space-between;
     align-items: flex-start;
 
@@ -20,6 +23,10 @@
       align-items: center;
     }
   }
+}
+
+#section-1.bg-change {
+  background: url("../img/section-1_bg.jpg") center top no-repeat;
 }
 
 .section-1_desc-title {

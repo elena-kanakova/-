@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Архистрой</title>
-    <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
+    <link rel="stylesheet" href="libs/jquery.pagepiling.css">
     <link rel="stylesheet" href="libs/owl.carousel.min.css">
     <link rel="stylesheet" href="libs/magnific-popup.min.css">
     <link rel="stylesheet" href="css/base.css">
@@ -12,12 +12,14 @@
 </head>
 <body>
 <div id="pagepiling" class="wrapper">
-    <div class="overlay"></div>
+    <div id="preloader" class="flex center">
+        <div class="preloader-img"><img src="img/logo.png" alt="Логотип"></div>
+    </div>
     <header class="main-header">
     <div class="container flex">
         <div class="main-header_left flex">
             <div class="header-logo flex center">
-                <a href="#">Архистрой <sup>&#169;</sup></a>
+                <a href="#section-1"><img src="img/logo.png" alt="Логотип"></a>
             </div>
             <div class="main-header_company-text">
                 <p>Строительство и реконструкция <br>
@@ -39,7 +41,7 @@
         <div class="header-wrap flex">
             <div class="main-header_left flex">
                 <div class="header-logo flex center">
-                    <a href="#">Архистрой <sup>&#169;</sup></a>
+                    <a href="#section-1"><img src="img/logo.png" alt="Логотип"></a>
                 </div>
                 <div class="main-header_company-text">
                     <p>Строительство и реконструкция <br>
@@ -48,13 +50,13 @@
             </div>
             <div class="main-header_right header_btn-menu_close js-close-btn flex">
                 <p class="close">закрыть</p>
-                <p class="x">x</p>
+                <img src="img/close.png" class="x" />
             </div>
         </div>
         <div class="header-menu_wrap flex">
             <div class="header-menu">
                 <ul class="element flex column">
-                    <li data-menuanchor="section-1" class="active"><a href="#section-1" class="underline js-menu-link">Главная</a></li>
+                    <li data-menuanchor="section-1" class="active"><a href="#section-1" class="js-menu-link">Главная</a></li>
                     <li data-menuanchor="section-2"><a href="#section-2" class="js-menu-link">О компании</a></li>
                     <li data-menuanchor="section-3"><a href="#section-3" class="js-menu-link">Преимущества</a></li>
                     <li data-menuanchor="section-4"><a href="#section-4" class="js-menu-link">Наши услуги</a></li>
@@ -123,7 +125,7 @@
             </div>
             <div class="main-header_right header_btn-menu_close js-close-btn flex">
                 <p class="close">закрыть</p>
-                <p class="x">x</p>
+                <img src="img/close.png" class="x" />
             </div>
         </div>
         <div class="header-menu_wrap flex">
@@ -395,14 +397,14 @@
         </div>
     </div>
 </section>
-<section id="section-4" class="section pp-scrollable">
+    <section id="section-4" class="section pp-scrollable">
     <div class="container">
         <div class="section-4_title-link flex">
             <div class="title">
                 <h2>Наши услуги</h2>
             </div>
             <div class="link flex">
-                <div class="link-icon"><img src="./img/window-icon.png" alt="Иконка"></div>
+                <div class="link-icon"><img src="/img/window-icon.png" alt="Иконка"></div>
                 <a href="#section-5">Посмотреть возможности <br>
                     будущей мансарды</a>
             </div>
@@ -483,90 +485,6 @@
         </div>
     </div>
 </section>
-    <section id="section-3" class="section pp-scrollable">
-    <div class="container">
-        <div class="section-3_title">
-            <h2>Почему мансарда от <br>
-                «Архистрой» и <span>«Velux»</span></h2>
-        </div>
-        <div class="section-3_text">
-            <p>Самый красивый вид открывается только с мансардного этажа!</p>
-        </div>
-        <div class="section-3_elements-wrap flex wrap">
-            <article class="element flex">
-                <div class="number">
-                    <p><span>0</span>1</p>
-                </div>
-                <div class="text">
-                    <h3>Вентиляция в любое <br>
-                        время года</h3>
-                    <p>Окна имеют систему микрощелевого <br>
-                        проветривания, которая пропускает <br>
-                        свежий воздух даже при закрытом окне</p>
-                </div>
-            </article>
-            <article class="element flex">
-                <div class="number">
-                    <p><span>0</span>2</p>
-                </div>
-                <div class="text">
-                    <h3>На 40% больше света <br>
-                        в мансардном помещении</h3>
-                    <p>В хорошо освещаемом помещении <br>
-                        повышается продуктивность, улучшает <br>
-                        настроение, снижается риск падения зрения</p>
-                </div>
-            </article>
-            <article class="element flex">
-                <div class="number">
-                    <p><span>0</span>3</p>
-                </div>
-                <div class="text">
-                    <h3>Сохранение тепла и чистые <br>
-                        окна круглый год</h3>
-                    <p>Установка теплоизоляционных <br>
-                        материалов. Поверхность окон, <br>
-                        отталкивающая грязь и воду</p>
-                </div>
-            </article>
-            <article class="element flex">
-                <div class="number">
-                    <p><span>0</span>4</p>
-                </div>
-                <div class="text">
-                    <h3>Возможность <span>воплотить</span> <br>
-                        любые дизайнерские <span>мечты</span></h3>
-                    <p>Помещения в мансарде - самые <br>
-                        объемные, в них Вы сможете воплотить <br>
-                        любые дизайнерские задумки</p>
-                </div>
-            </article>
-            <article class="element flex">
-                <div class="number">
-                    <p><span>0</span>5</p>
-                </div>
-                <div class="text">
-                    <h3>С нами Вашей мансарде <br>
-                        не страшна непогода</h3>
-                    <p>Закаленное стекло окон <span>«VELUX»</span> – <br>
-                        надежная защита от сколов и трещин</p>
-                </div>
-            </article>
-            <article class="element flex">
-                <div class="number">
-                    <p><span>0</span>6</p>
-                </div>
-                <div class="text">
-                    <h3>Окна <span>«VELUX»</span> не текут и не <br>
-                        требуют постоянного сервиса</h3>
-                    <p>Окна изготовлены из высокопрочной сибирской <br>
-                        сосны. Окна <span>«VELUX»</span> проверены временем и <br>
-                        миллионами людей по всему миру</p>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
     <section id="section-5" class="section pp-scrollable">
     <div class="container title-wrap flex">
         <div class="section-5__tabs-nav-title_wrap">
@@ -628,7 +546,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                        <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -663,7 +581,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -698,7 +616,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -740,7 +658,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -775,7 +693,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -810,7 +728,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -896,6 +814,44 @@
                     компании «Архистрой»</button>
             </div>
         </div>
+        <div class="section-7_content active flex">
+            <div class="photo-wrap flex column">
+                <div class="before-after-photo_wrap flex">
+                    <div class="photo before-after">
+                        <span>до</span>
+                        <img src="img/section-7_photo-1.jpg" alt="Фото">
+                    </div>
+                    <div class="photo before-after">
+                        <span>после</span>
+                        <img src="img/section-7_photo-2.jpg" alt="Фото">
+                    </div>
+                </div>
+                <div class="photo big">
+                    <img src="img/section-7_photo-big.jpg" alt="Фото">
+                </div>
+            </div>
+            <div class="text-btn_wrap">
+                <div class="text">
+                    <h3>Мансардное окно пример</h3>
+                    <p>Были проведены работы пример:</p>
+                    <ul>
+                        <li>Закаленное внешнее стекло</li>
+                        <li>Стандартные уплотнители для защиты от протечек</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                    </ul>
+                    <p>Описание работ. Базовая модель, ручка снизу
+                        (высота установки 130-160 см). Описание работ.
+                        Базовая модель, ручка снизу (высота установки
+                        130-160 см).</p>
+                </div>
+                <div class="btn-next">
+                    <button class="js-btn-next"><span>Следующий проект</span><img src="./img/arrow.png" alt="Стрелка: иконка"></button>
+                </div>
+            </div>
+        </div>
         <div class="section-7_content flex">
             <div class="photo-wrap flex column">
                 <div class="before-after-photo_wrap flex">
@@ -930,7 +886,7 @@
                         130-160 см).</p>
                 </div>
                 <div class="btn-next">
-                    <button><span>Следующий проект</span><img src="./img/arrow.png" alt="Стрелка: иконка"></button>
+                    <button class="js-btn-next"><span>Следующий проект</span><img src="./img/arrow.png" alt="Стрелка: иконка"></button>
                 </div>
             </div>
         </div>
@@ -1160,6 +1116,7 @@
     <div id="next-section">
         <p>далее</p>
     </div>
+    <div class="overlay"></div>
 </div>
 <div id="btn-window">
     <button class="flex center js-link-modal_left-right" data-href="modal_order-window"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
@@ -1168,7 +1125,7 @@
     <div id="order-form" class="form-wrap">
         <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
-            <p class="x">x</p>
+            <img src="img/close.png" class="x" />
         </div>
         <div class="form-title">
             <h3>Подберем окно <br>под Вашу мансарду</h3>
@@ -1211,7 +1168,7 @@
     <div id="order-form_section-5" class="form-wrap">
         <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
-            <p class="x">x</p>
+            <img src="img/close.png" class="x" />
         </div>
         <div class="form-title">
             <h3>Заказать <br>
@@ -1253,8 +1210,14 @@
 </div>
 <div id="modal_project-gallery" class="modal">
     <div class="container">
-        <div class="project-gallery_title">
-            <h2>Галерея проектов</h2>
+        <div class="title-close-btn_wrap flex">
+            <div class="header_btn-menu_close js-close-btn flex">
+                <p class="close">закрыть</p>
+                <img src="img/close.png" class="x" />
+            </div>
+            <div class="project-gallery_title">
+                <h2>Галерея проектов</h2>
+            </div>
         </div>
         <div class="project-gallery__slider-wrap">
             <div id="project-gallery_slider">
@@ -1265,9 +1228,40 @@
         </div>
     </div>
 </div>
+<div id="about-project-1" class="about-project modal">
+    <div class="container">
+        <div class="header_btn-menu_close js-close-btn flex">
+            <p class="close">закрыть</p>
+            <img src="img/close.png" class="x" />
+        </div>
+        <div class="text">
+            <h3>Европейское двухкамерное окно</h3>
+            <p>Модель GLL</p>
+            <ul>
+                <li>Закаленное внешнее стекло</li>
+                <li>Стандартные уплотнители для защиты от протечек</li>
+                <li>Встроенная вентиляция с фильтром</li>
+                <li>Выбор варианта открывания</li>
+            </ul>
+            <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+        </div>
+    </div>
+</div>
+<div id="thanks" class="modal">
+    <div class="container">
+        <div class="header_btn-menu_close js-close-btn flex">
+            <p class="close">закрыть</p>
+            <img src="img/close.png" class="x" />
+        </div>
+        <div class="text">
+            <h3>Спасибо! Мы получили <br>
+                Вашу заявку</h3>
+            <p>Свяжемся с Вами в ближайшее время</p>
+        </div>
+    </div>
+</div>
 <script src="libs/jquery-3.2.1.min.js"></script>
 <script src="libs/jquery.pagepiling.js"></script>
-<script src="libs/wow.min.js"></script>
 <script src="libs/jquery.maskedinput.min.js"></script>
 <script src="libs/owl.carousel.min.js"></script>
 <script src="libs/magnific.min.js"></script>

@@ -80,61 +80,95 @@ $(function(){
 });
 
 /* Плагин прокрутки сайта */
+$(document).ready(function () {
+    $('#pagepiling').pagepiling({
+        verticalCentered: false,
+        normalScrollElements: null,
+        normalScrollElementTouchThreshold: 5,
+        touchSensitivity: 5,
+        keyboardScrolling: true,
+        sectionSelector: '.section',
+        anchors: ['section-1', 'section-2', 'section-3', 'section-4', 'section-5', 'section-6', 'section-7', 'section-8', 'section-9', 'section-10'],
+        menu: '.header-menu',
+        loopBottom: true,
+        navigation: false,
+        animateAnchor: true,
+        afterLoad: function(anchorLink, index){
+            $('.section').animate({scrollTop: top}, 800);
+            var header = $('.main-header');
 
-$('#pagepiling').pagepiling({
-    verticalCentered: false,
-    normalScrollElements: null,
-    normalScrollElementTouchThreshold: 5,
-    touchSensitivity: 5,
-    keyboardScrolling: true,
-    sectionSelector: '.section',
-    anchors: ['section-1', 'section-2', 'section-3', 'section-4', 'section-5', 'section-6', 'section-7', 'section-8', 'section-9', 'section-10'],
-    menu: '.header-menu',
-    loopBottom: true,
-    navigation: {
-        'textColor': '#000',
-        'bulletsColor': 'red',
-        'position': 'right'
-    },
-    animateAnchor: true,
-    afterLoad: function(anchorLink, index){
-        if(anchorLink == 'section-9'){
-            $('.main-header').addClass('js-scroll');
-            $('.main-header').fadeOut(1000);
-        }
-        else {
-            $('.main-header').removeClass('js-scroll');
-            $('.main-header').fadeIn(1000);
-        }
-    },
+            if(anchorLink != 'section-1'){
+                header.addClass('js-scroll');
+            }
 
-    /*onLeave: function(index, nextIndex, direction){
-        //after leaving section 2
-        if(index == 2 && direction =='down'){
-            alert("Going to section 3!");
-        }
+            else if(anchorLink == 'section-1') {
+                header.removeClass('js-scroll');
+            };
 
-        else if(index == 2 && direction == 'up'){
-            alert("Going to section 1!");
-        }
-    }*/
+            if(anchorLink == 'section-9'){
+                header.addClass('white-el');
+            }
+
+            else if(anchorLink != 'section-9'){
+                header.removeClass('white-el');
+            };
+        },
+
+        /*onLeave: function(index, nextIndex, direction){
+            //after leaving section 2
+            if(index == 2 && direction =='down'){
+                alert("Going to section 3!");
+            }
+
+            else if(index == 2 && direction == 'up'){
+                alert("Going to section 1!");
+            }
+        }*/
+    });
 });
 
 // Магнифик
 
-$('.section-8_slider__slider-wrap .slider .slide a').magnificPopup({
-    type: 'image',
-    gallery:{
-        enabled:true
-    }
+$(document).ready(function () {
+    $('.section-8_slider__slider-wrap .slider .slide a').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true
+        }
+    });
+
+    $('#slider_opinions .slide a').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true
+        }
+    });
 });
 
-$('#slider_opinions .slide a').magnificPopup({
-    type: 'image',
-    gallery:{
-        enabled:true
-    }
+$(document).ready(function () {
+    $('#preloader').delay(500).fadeOut(500);
+    setTimeout(function(){
+        $('#section-1').css({'background-image': 'url("../img/section-1_bg.jpg")', 'transition': 'background 5s linear'})
+    },1000);
+    $('.section-7_content').on('click','.js-btn-next', function () {
+        $('.section-7_content').removeClass('active').next().addClass('active');
+    });
+
+    $('input[type=checkbox]').attr("checked","checked");
 });
+
+//Скрипт для подложки меню при прокрутке
+$(function () {
+    $('.section').scroll(function(event) {
+        if($(this).scrollTop() > 100) {
+            $(".main-header").addClass('white-bg');
+        }
+        else {
+            $(".main-header").removeClass('white-bg');
+        }
+    });
+});
+
 // Модальные окна
 $(document).ready(function() {
     $('.js-modal-link').click(function(e) {
@@ -154,6 +188,19 @@ $(document).ready(function() {
         e.preventDefault();
 
         var id = '#' + $(this).attr('data-href');
+        var id2 = $(this).offset().top,
+            height = window.innerHeight / 2;
+
+        $('html').addClass('fixed');
+        $('.overlay').fadeIn(200);
+        $(id).fadeIn(500);
+        $(id).css('top', window.scrollY + height + 'px');
+    });
+
+    $('.js-modal-about-link_btn').click(function(e) {
+        e.preventDefault();
+
+        var id = '#about-project-' + $(this).attr('data-href');
         var id2 = $(this).offset().top,
             height = window.innerHeight / 2;
 

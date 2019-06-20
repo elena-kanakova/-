@@ -10,6 +10,18 @@
 
   .container {
     padding: 85px 10px 48px;
+
+    @include mq('desktop') {
+      padding: 85px 30px 48px;
+    }
+
+    @include mq('tablet') {
+      padding: 85px 20px 48px;
+    }
+
+    @include mq('phone-wide') {
+      padding: 85px 10px 48px;
+    }
   }
 }
 

@@ -295,11 +295,16 @@
         margin-top: 15px;
       }
 
-      a {
-        font: 18px $font;
-        font-weight: 500;
-        color: $color-red;
-        text-decoration: underline;
+      button {
+        background: none;
+        border: none;
+
+        span {
+          font: 18px $font;
+          font-weight: 500;
+          color: $color-red;
+          text-decoration: underline;
+        }
       }
     }
   }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Архистрой</title>
     <!-- @if NODE_ENV='development' -->
-    <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
+    <link rel="stylesheet" href="libs/jquery.pagepiling.css">
     <link rel="stylesheet" href="libs/owl.carousel.min.css">
     <link rel="stylesheet" href="libs/magnific-popup.min.css">
     <link rel="stylesheet" href="css/base.css">
@@ -20,7 +20,9 @@
 </head>
 <body>
 <div id="pagepiling" class="wrapper">
-    <div class="overlay"></div>
+    <div id="preloader" class="flex center">
+        <div class="preloader-img"><img src="img/logo.png" alt="Логотип"></div>
+    </div>
     @@include('./_header.html')
     @@include('./_header-open.html')
     @@include('./_section-1.html')
@@ -36,6 +38,7 @@
     <div id="next-section">
         <p>далее</p>
     </div>
+    <div class="overlay"></div>
 </div>
 <div id="btn-window">
     <button class="flex center js-link-modal_left-right" data-href="modal_order-window"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
@@ -44,7 +47,7 @@
     <div id="order-form" class="form-wrap">
         <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
-            <p class="x">x</p>
+            <img src="img/close.png" class="x" />
         </div>
         <div class="form-title">
             <h3>Подберем окно <br>под Вашу мансарду</h3>
@@ -87,7 +90,7 @@
     <div id="order-form_section-5" class="form-wrap">
         <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
-            <p class="x">x</p>
+            <img src="img/close.png" class="x" />
         </div>
         <div class="form-title">
             <h3>Заказать <br>
@@ -129,8 +132,14 @@
 </div>
 <div id="modal_project-gallery" class="modal">
     <div class="container">
-        <div class="project-gallery_title">
-            <h2>Галерея проектов</h2>
+        <div class="title-close-btn_wrap flex">
+            <div class="header_btn-menu_close js-close-btn flex">
+                <p class="close">закрыть</p>
+                <img src="img/close.png" class="x" />
+            </div>
+            <div class="project-gallery_title">
+                <h2>Галерея проектов</h2>
+            </div>
         </div>
         <div class="project-gallery__slider-wrap">
             <div id="project-gallery_slider">
@@ -141,9 +150,40 @@
         </div>
     </div>
 </div>
+<div id="about-project-1" class="about-project modal">
+    <div class="container">
+        <div class="header_btn-menu_close js-close-btn flex">
+            <p class="close">закрыть</p>
+            <img src="img/close.png" class="x" />
+        </div>
+        <div class="text">
+            <h3>Европейское двухкамерное окно</h3>
+            <p>Модель GLL</p>
+            <ul>
+                <li>Закаленное внешнее стекло</li>
+                <li>Стандартные уплотнители для защиты от протечек</li>
+                <li>Встроенная вентиляция с фильтром</li>
+                <li>Выбор варианта открывания</li>
+            </ul>
+            <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+        </div>
+    </div>
+</div>
+<div id="thanks" class="modal">
+    <div class="container">
+        <div class="header_btn-menu_close js-close-btn flex">
+            <p class="close">закрыть</p>
+            <img src="img/close.png" class="x" />
+        </div>
+        <div class="text">
+            <h3>Спасибо! Мы получили <br>
+                Вашу заявку</h3>
+            <p>Свяжемся с Вами в ближайшее время</p>
+        </div>
+    </div>
+</div>
 <script src="libs/jquery-3.2.1.min.js"></script>
 <script src="libs/jquery.pagepiling.js"></script>
-<script src="libs/wow.min.js"></script>
 <script src="libs/jquery.maskedinput.min.js"></script>
 <script src="libs/owl.carousel.min.js"></script>
 <script src="libs/magnific.min.js"></script>

@@ -12,12 +12,14 @@
 </head>
 <body>
 <div id="pagepiling" class="wrapper">
-    <div class="overlay"></div>
-    <header id="main-header">
+    <div id="preloader" class="flex center">
+        <div class="preloader-img"><img src="img/logo.png" alt="Логотип"></div>
+    </div>
+    <header class="main-header">
     <div class="container flex">
         <div class="main-header_left flex">
             <div class="header-logo flex center">
-                <a href="#">Архистрой <sup>&#169;</sup></a>
+                <a href="#section-1"><img src="img/logo.png" alt="Логотип"></a>
             </div>
             <div class="main-header_company-text">
                 <p>Строительство и реконструкция <br>
@@ -34,12 +36,12 @@
         </div>
     </div>
 </header>
-<header id="header-open" class="header-open_wrap modal-up">
+    <header id="header-open" class="header-open_wrap modal-up">
     <div class="container">
         <div class="header-wrap flex">
             <div class="main-header_left flex">
                 <div class="header-logo flex center">
-                    <a href="#">Архистрой <sup>&#169;</sup></a>
+                    <a href="#section-1"><img src="img/logo.png" alt="Логотип"></a>
                 </div>
                 <div class="main-header_company-text">
                     <p>Строительство и реконструкция <br>
@@ -48,13 +50,13 @@
             </div>
             <div class="main-header_right header_btn-menu_close js-close-btn flex">
                 <p class="close">закрыть</p>
-                <p class="x">x</p>
+                <img src="img/close.png" class="x" />
             </div>
         </div>
         <div class="header-menu_wrap flex">
             <div class="header-menu">
                 <ul class="element flex column">
-                    <li data-menuanchor="section-1" class="active"><a href="#section-1" class="underline js-menu-link">Главная</a></li>
+                    <li data-menuanchor="section-1" class="active"><a href="#section-1" class="js-menu-link">Главная</a></li>
                     <li data-menuanchor="section-2"><a href="#section-2" class="js-menu-link">О компании</a></li>
                     <li data-menuanchor="section-3"><a href="#section-3" class="js-menu-link">Преимущества</a></li>
                     <li data-menuanchor="section-4"><a href="#section-4" class="js-menu-link">Наши услуги</a></li>
@@ -123,7 +125,7 @@
             </div>
             <div class="main-header_right header_btn-menu_close js-close-btn flex">
                 <p class="close">закрыть</p>
-                <p class="x">x</p>
+                <img src="img/close.png" class="x" />
             </div>
         </div>
         <div class="header-menu_wrap flex">
@@ -402,7 +404,7 @@
                 <h2>Наши услуги</h2>
             </div>
             <div class="link flex">
-                <div class="link-icon"><img src="./img/window-icon.png" alt="Иконка"></div>
+                <div class="link-icon"><img src="/img/window-icon.png" alt="Иконка"></div>
                 <a href="#section-5">Посмотреть возможности <br>
                     будущей мансарды</a>
             </div>
@@ -520,11 +522,11 @@
         <div class="section-5__tabs-content-2_wrap flex">
             <div class="section-5__slider-wrap">
                 <div class="section-5_slider owl-carousel">
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                 </div>
             </div>
             <div class="section-5_tabs-content-2_desc">
@@ -544,7 +546,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                        <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -555,11 +557,11 @@
         <div class="section-5__tabs-content-2_wrap active flex">
             <div class="section-5__slider-wrap">
                 <div class="section-5_slider owl-carousel">
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                 </div>
             </div>
             <div class="section-5_tabs-content-2_desc">
@@ -579,7 +581,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -590,11 +592,11 @@
         <div class="section-5__tabs-content-2_wrap flex">
             <div class="section-5__slider-wrap">
                 <div class="section-5_slider owl-carousel">
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                 </div>
             </div>
             <div class="section-5_tabs-content-2_desc">
@@ -614,7 +616,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -632,11 +634,11 @@
         <div class="section-5__tabs-content-2_wrap flex">
             <div class="section-5__slider-wrap">
                 <div class="section-5_slider owl-carousel">
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                 </div>
             </div>
             <div class="section-5_tabs-content-2_desc">
@@ -656,7 +658,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -667,11 +669,11 @@
         <div class="section-5__tabs-content-2_wrap active flex">
             <div class="section-5__slider-wrap">
                 <div class="section-5_slider owl-carousel">
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                 </div>
             </div>
             <div class="section-5_tabs-content-2_desc">
@@ -691,7 +693,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -702,11 +704,11 @@
         <div class="section-5__tabs-content-2_wrap flex">
             <div class="section-5__slider-wrap">
                 <div class="section-5_slider owl-carousel">
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
-                    <div class="slide"><img src="img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+                    <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
                 </div>
             </div>
             <div class="section-5_tabs-content-2_desc">
@@ -726,7 +728,7 @@
                         <p>от 18 700 ₽ за окно</p>
                     </div>
                     <div class="link">
-                        <a href="#">Подробнее</a>
+                       <button class="js-modal-about-link_btn" data-href="1"><span>Подробнее</span></button>
                     </div>
                 </div>
                 <div class="desc_btn-order">
@@ -812,6 +814,44 @@
                     компании «Архистрой»</button>
             </div>
         </div>
+        <div class="section-7_content active flex">
+            <div class="photo-wrap flex column">
+                <div class="before-after-photo_wrap flex">
+                    <div class="photo before-after">
+                        <span>до</span>
+                        <img src="img/section-7_photo-1.jpg" alt="Фото">
+                    </div>
+                    <div class="photo before-after">
+                        <span>после</span>
+                        <img src="img/section-7_photo-2.jpg" alt="Фото">
+                    </div>
+                </div>
+                <div class="photo big">
+                    <img src="img/section-7_photo-big.jpg" alt="Фото">
+                </div>
+            </div>
+            <div class="text-btn_wrap">
+                <div class="text">
+                    <h3>Мансардное окно пример</h3>
+                    <p>Были проведены работы пример:</p>
+                    <ul>
+                        <li>Закаленное внешнее стекло</li>
+                        <li>Стандартные уплотнители для защиты от протечек</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                        <li>Встроенная вентиляция с фильтром</li>
+                        <li>Выбор варианта открывания</li>
+                    </ul>
+                    <p>Описание работ. Базовая модель, ручка снизу
+                        (высота установки 130-160 см). Описание работ.
+                        Базовая модель, ручка снизу (высота установки
+                        130-160 см).</p>
+                </div>
+                <div class="btn-next">
+                    <button class="js-btn-next"><span>Следующий проект</span><img src="./img/arrow.png" alt="Стрелка: иконка"></button>
+                </div>
+            </div>
+        </div>
         <div class="section-7_content flex">
             <div class="photo-wrap flex column">
                 <div class="before-after-photo_wrap flex">
@@ -846,7 +886,7 @@
                         130-160 см).</p>
                 </div>
                 <div class="btn-next">
-                    <button><span>Следующий проект</span><img src="./img/arrow.png" alt="Стрелка: иконка"></button>
+                    <button class="js-btn-next"><span>Следующий проект</span><img src="./img/arrow.png" alt="Стрелка: иконка"></button>
                 </div>
             </div>
         </div>
@@ -985,6 +1025,7 @@
                     </a>
                 </div>
             </div>
+            <div class="section-9_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Вперед"></div>
         </div>
     </div>
 </section>
@@ -1075,6 +1116,7 @@
     <div id="next-section">
         <p>далее</p>
     </div>
+    <div class="overlay"></div>
 </div>
 <div id="btn-window">
     <button class="flex center js-link-modal_left-right" data-href="modal_order-window"><img src="./img/window-icon-2.png" alt="Иконка: Подобрать окно"><span>Подобрать окно</span></button>
@@ -1083,7 +1125,7 @@
     <div id="order-form" class="form-wrap">
         <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
-            <p class="x">x</p>
+            <img src="img/close.png" class="x" />
         </div>
         <div class="form-title">
             <h3>Подберем окно <br>под Вашу мансарду</h3>
@@ -1126,7 +1168,7 @@
     <div id="order-form_section-5" class="form-wrap">
         <div class="header_btn-menu_close js-close-btn flex">
             <p class="close">закрыть</p>
-            <p class="x">x</p>
+            <img src="img/close.png" class="x" />
         </div>
         <div class="form-title">
             <h3>Заказать <br>
@@ -1168,13 +1210,53 @@
 </div>
 <div id="modal_project-gallery" class="modal">
     <div class="container">
-        <div class="project-gallery_title">
-            <h2>Галерея проектов</h2>
+        <div class="title-close-btn_wrap flex">
+            <div class="header_btn-menu_close js-close-btn flex">
+                <p class="close">закрыть</p>
+                <img src="img/close.png" class="x" />
+            </div>
+            <div class="project-gallery_title">
+                <h2>Галерея проектов</h2>
+            </div>
         </div>
         <div class="project-gallery__slider-wrap">
             <div id="project-gallery_slider">
                 <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
             </div>
+            <div class="section-5_slider__prev"><img src="/img/section-5_slider_arrow-prev.png" alt="Вперед"></div>
+            <div class="section-5_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Назад"></div>
+        </div>
+    </div>
+</div>
+<div id="about-project-1" class="about-project modal">
+    <div class="container">
+        <div class="header_btn-menu_close js-close-btn flex">
+            <p class="close">закрыть</p>
+            <img src="img/close.png" class="x" />
+        </div>
+        <div class="text">
+            <h3>Европейское двухкамерное окно</h3>
+            <p>Модель GLL</p>
+            <ul>
+                <li>Закаленное внешнее стекло</li>
+                <li>Стандартные уплотнители для защиты от протечек</li>
+                <li>Встроенная вентиляция с фильтром</li>
+                <li>Выбор варианта открывания</li>
+            </ul>
+            <p>Базовая модель, ручка снизу (высота установки 130-160 см).</p>
+        </div>
+    </div>
+</div>
+<div id="thanks" class="modal">
+    <div class="container">
+        <div class="header_btn-menu_close js-close-btn flex">
+            <p class="close">закрыть</p>
+            <img src="img/close.png" class="x" />
+        </div>
+        <div class="text">
+            <h3>Спасибо! Мы получили <br>
+                Вашу заявку</h3>
+            <p>Свяжемся с Вами в ближайшее время</p>
         </div>
     </div>
 </div>
@@ -1183,7 +1265,7 @@
 <script src="libs/jquery.maskedinput.min.js"></script>
 <script src="libs/owl.carousel.min.js"></script>
 <script src="libs/magnific.min.js"></script>
-<script src="js/scripts.min.js"></script>
+<script src="js/scripts.js"></script>
 <script id="__bs_script__">//<![CDATA[
 document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));
 //]]></script>

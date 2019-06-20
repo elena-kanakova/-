@@ -50,9 +50,27 @@
   }
 }
 
+.section-7_content.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transition: all 3s linear;
+}
+
+.section-7_content.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: all .3s linear;
+}
+
 .section-7_content {
+  display: none;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
   margin-top: 35px;
   justify-content: space-between;
+  transition: all .3s linear;
 
   @include mq('tablet') {
     flex-direction: column;
