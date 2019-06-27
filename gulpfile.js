@@ -22,10 +22,10 @@ const autoprefixer = require('gulp-autoprefixer');
 // Пути для сборки
 var path = {
     build: {
-        root: 'prod/',
-        js: 'prod/js/',
+        root: 'c:/Openserver/OSPanel/domains/arkhistroy/wp-content/themes/arkhistroy',
+        js: 'c:/Openserver/OSPanel/domains/arkhistroy/wp-content/themes/arkhistroy/js/',
         fonts: 'prod/fonts',
-        css: 'prod/css/',
+        css: 'c:/Openserver/OSPanel/domains/arkhistroy/wp-content/themes/arkhistroy/css/',
         libs: 'prod/libs/',
         img: 'prod/img/'
     },
@@ -202,7 +202,7 @@ gulp.task('watch:prod', function(done) {
         server: "prod/"
     });
 
-    gulp.watch("src/styles/*.scss", gulp.parallel('html:prod','sass:prod','js:prod','img'));
+    gulp.watch("src/styles/*.scss", gulp.parallel('html:prod','sass:prod','js:prod'));
     gulp.watch("prod/*.html").on('change', () => {
         browserSync.reload();
         done();
@@ -236,5 +236,6 @@ gulp.task('dev', gulp.series(
 
 gulp.task('prod', gulp.series(
     'clean:prod',
-    gulp.parallel('html:prod','sass:prod','js:prod')
+    gulp.parallel('html:prod','sass:prod','js:prod'),
+    'watch:prod'
 ));

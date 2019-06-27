@@ -52,7 +52,7 @@
     padding-right: 60px;
     .slide {
       img {
-        max-width: 190px;
+        width: 190px !important;
       }
     }
   }
@@ -110,5 +110,16 @@
         color: $color-grey;
       }
     }
+  }
+}
+
+#slider_certificates {
+  .slide {
+    display: block;
+    box-shadow: -5px 5px 10px 0 rgba(.75,.75,.75,0.5);
+  }
+
+  .owl-item {
+    padding: 15px;
   }
 }

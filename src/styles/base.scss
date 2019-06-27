@@ -92,7 +92,7 @@ $breakpoints: (
   bottom: $bottom;
 }
 
-@mixin font-title($size:55px, $family:$font, $color:#343434) {
+@mixin font-title($size:55px, $family:$font, $color:$color-grey) {
   font: $size $family;
   font-weight: 500;
   color: $color;
@@ -271,6 +271,14 @@ $breakpoints: (
 
 /* Общие классы */
 
+.screen-reader-response, .wpcf7-validation-errors, .wpcf7-not-valid-tip, .wpcf7-response-output, .wpcf7-mail-sent-ok {
+  display: none !important;
+}
+
+div.wpcf7 .ajax-loader {
+  display: none;
+}
+
 ::-webkit-scrollbar { /* chrome based */
   width: 0px;  /* ширина scrollbar'a */
   background: transparent;  /* опционально */
@@ -279,6 +287,11 @@ $breakpoints: (
 html {
   -ms-overflow-style: none;  /* IE 10+ */
   scrollbar-width: none; /* Firefox */
+}
+
+html.fixed {
+  margin-right: 17px;
+  overflow: hidden;
 }
 
 /*Контейнер для всего сайта */
@@ -386,12 +399,9 @@ html {
   }
 
   /* Шапка */
-.main-header.js-scroll {
-  padding: 10px 0;
-}
-
 .main-header.white-bg {
-  background: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.8);
+  padding: 10px 0;
 }
 
 .main-header.white-el {
@@ -414,11 +424,13 @@ html {
 }
 
 .main-header {
-    padding-top: 28px;
-    width: 100%;
-    position: absolute;
-    z-index: 998;
-    .container {
+  padding-top: 28px;
+  width: 100%;
+  position: fixed;
+  z-index: 998;
+  transition: padding-top .3s linear;
+
+  .container {
       padding: 0 10px;
       justify-content: space-between;
 
@@ -719,6 +731,7 @@ html {
 .header-contacts {
   margin: 8px 0 6px;
   justify-content: space-between;
+  flex: 1 1 25%;
 
   @include mq('tablet-wide') {
     flex: 1 1 100%;
@@ -742,6 +755,7 @@ html {
 .header-other {
   margin: 8px 0;
   justify-content: space-between;
+  flex: 1 1 25%;
 
   .other-info {
     p {
@@ -768,13 +782,30 @@ html {
     flex: 1 1 100%;
   }
 
-  .youtube, .insta {
-    margin-left: 9px;
+  a {
+    display: block;
+  }
+
+  .header-social {
+    .youtube, .insta {
+      margin-left: 9px;
+    }
   }
 
   .header-link {
+    padding-bottom: 4px;
+
+    p {
+      font: 14px $font;
+      font-weight: 400;
+      color: #838383;
+    }
+
     a {
-      display: block;
+      margin-left: 5px;
+      font: 14px $font;
+      font-weight: 400;
+      color: $color-red;
     }
 
     @include mq('desktop') {
@@ -833,6 +864,9 @@ html {
     }
 
     .order-call-form_wrap {
+      width: 50%;
+      flex: 1 1 50%;
+
       @include mq-custom(1200px) {
         width: 100%;
         flex: 1 1 100%;
@@ -931,13 +965,9 @@ html {
     cursor: pointer;
     margin-top: 20px;
     margin-right: 20px;
-
-    span {
-      margin-left: 10px;
-      font: 18px $font;
-      font-weight: 400;
-      color: white;
-    }
+    font: 18px $font;
+    font-weight: 400;
+    color: white;
 
     @include mq('tablet-wide') {
       @include auto;
@@ -1085,6 +1115,12 @@ html {
     }
   }
 
+  .textarea {
+    textarea {
+      height: 62px;
+    }
+  }
+
   @include title-triangle;
 
   .btn-form_submit {
@@ -1093,13 +1129,9 @@ html {
     border: none;
     cursor: pointer;
     margin-top: 38px;
-
-    span {
-      margin-left: 10px;
-      font: 18px $font;
-      font-weight: 400;
-      color: white;
-    }
+    font: 18px $font;
+    font-weight: 400;
+    color: white;
 
     @include mq('tablet-wide') {
       @include auto;
@@ -1187,6 +1219,12 @@ html {
     }
   }
 
+  .textarea {
+    textarea {
+      height: 62px;
+    }
+  }
+
   @include title-triangle;
 
   .btn-form_submit {
@@ -1195,13 +1233,9 @@ html {
     border: none;
     cursor: pointer;
     margin-top: 38px;
-
-    span {
-      margin-left: 10px;
-      font: 18px $font;
-      font-weight: 400;
-      color: white;
-    }
+    font: 18px $font;
+    font-weight: 400;
+    color: white;
 
     @include mq('tablet-wide') {
       @include auto;
@@ -1223,6 +1257,7 @@ html {
   display: none;
   position: absolute;
   z-index: 999;
+  padding-bottom: 100px;
   width: 100%;
   height: 100%;
   top: -50%;
@@ -1230,9 +1265,34 @@ html {
   transform: translate(-50%,-50%);
   overflow-y: auto;
   overflow-x: hidden;
+  background: white;
 
   .title-close-btn_wrap {
     justify-content: space-between;
+    align-items: center;
+
+    @include mq-custom(500px) {
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .project-gallery_title {
+
+      @include mq-custom(500px) {
+        order: 2;
+        margin-top: 5px;
+        margin-bottom: 50px;;
+      }
+    }
+
+    .header_btn-menu_close {
+
+      @include mq-custom(500px) {
+        order: 1;
+        margin-top: 15px;
+      }
+    }
   }
 }
 
@@ -1255,6 +1315,8 @@ html {
   .slide {
     position: relative;
     overflow: hidden;
+    max-width: 700px;
+    margin: 0 auto;
 
     &:before {
       @include pseudo(2,7px,7px,7px,7px);
@@ -1263,7 +1325,17 @@ html {
 
     img {
       display: block;
+      width: auto !important;
+      max-width: 700px;
     }
+  }
+
+  .section-5_slider__prev {
+    left: -20px;
+  }
+
+  .section-5_slider__next {
+    right: -20px;
   }
 }
 
@@ -1286,7 +1358,7 @@ html {
       margin-top: 5px;
       font: 18px TTNorms, sans-serif;
       font-weight: 400;
-      color: #343434;
+      color: $color-grey;
       border-bottom: 1px solid;
     }
 
@@ -1332,7 +1404,7 @@ html {
 
 #thanks {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: 50%;
   left: 50%;
@@ -1355,7 +1427,7 @@ html {
       margin-top: 5px;
       font: 18px TTNorms, sans-serif;
       font-weight: 400;
-      color: #343434;
+      color: $color-grey;
       border-bottom: 1px solid;
     }
 

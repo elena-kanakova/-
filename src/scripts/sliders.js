@@ -4,9 +4,25 @@ $(document).ready(function() {
         margin:0,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
+        dots: false,
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
+        responsive: {
+            0: {
+                items: 1,
+            }
+        }
+    });
+});
+
+$(document).ready(function() {
+    $('#project-gallery_slider').owlCarousel({
+        margin:0,
+        nav:true,
+        navText:false,
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
@@ -19,12 +35,11 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#slider_certificates').owlCarousel({
-        margin:0,
+        margin:10,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['','section-5_slider__next'],
         responsive: {
@@ -40,9 +55,8 @@ $(document).ready(function() {
         margin:0,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['','section-5_slider__next'],
         responsive: {
@@ -55,12 +69,11 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#slider_opinions').owlCarousel({
-        margin:0,
+        margin:10,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['','section-5_slider__next'],
         responsive: {

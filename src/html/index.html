@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Архистрой</title>
     <!-- @if NODE_ENV='development' -->
-    <link rel="stylesheet" href="libs/jquery.pagepiling.css">
+    <!--link rel="stylesheet" href="libs/jquery.pagepiling.css"-->
     <link rel="stylesheet" href="libs/owl.carousel.min.css">
     <link rel="stylesheet" href="libs/magnific-popup.min.css">
     <link rel="stylesheet" href="css/base.css">
     <!-- @endif -->
 
     <!-- @if NODE_ENV='production' -->
-    <link rel="stylesheet" href="libs/jquery.pagepiling.css" />
     <link rel="stylesheet" href="libs/owl.carousel.min.css">
     <link rel="stylesheet" href="libs/magnific-popup.min.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/base.min.css">
     <!-- @endif -->
 </head>
 <body>
@@ -133,20 +132,20 @@
 <div id="modal_project-gallery" class="modal">
     <div class="container">
         <div class="title-close-btn_wrap flex">
+            <div class="project-gallery_title">
+                <h2>Галерея проектов</h2>
+            </div>
             <div class="header_btn-menu_close js-close-btn flex">
                 <p class="close">закрыть</p>
                 <img src="img/close.png" class="x" />
             </div>
-            <div class="project-gallery_title">
-                <h2>Галерея проектов</h2>
-            </div>
         </div>
         <div class="project-gallery__slider-wrap">
-            <div id="project-gallery_slider">
-                <div class="slide"><img src="/img/section-5_slider-img.jpg" alt="Картинка"></div>
+            <div id="project-gallery_slider" class="owl-carousel">
+                <div class="slide"><img src="/img/project-slide.jpg" alt="Картинка"></div>
+                <div class="slide"><img src="/img/project-slide.jpg" alt="Картинка"></div>
+                <div class="slide"><img src="/img/project-slide.jpg" alt="Картинка"></div>
             </div>
-            <div class="section-5_slider__prev"><img src="/img/section-5_slider_arrow-prev.png" alt="Вперед"></div>
-            <div class="section-5_slider__next"><img src="/img/section-5_slider_arrow-next.png" alt="Назад"></div>
         </div>
     </div>
 </div>
@@ -182,12 +181,23 @@
         </div>
     </div>
 </div>
+
+<!-- @if NODE_ENV='development' -->
 <script src="libs/jquery-3.2.1.min.js"></script>
-<script src="libs/jquery.pagepiling.js"></script>
 <script src="libs/jquery.maskedinput.min.js"></script>
 <script src="libs/owl.carousel.min.js"></script>
 <script src="libs/magnific.min.js"></script>
 <script src="js/scripts.js"></script>
+<!-- @endif -->
+
+<!-- @if NODE_ENV='production' -->
+<script src="libs/jquery-3.2.1.min.js"></script>
+<script src="libs/jquery.maskedinput.min.js"></script>
+<script src="libs/owl.carousel.min.js"></script>
+<script src="libs/magnific.min.js"></script>
+<script src="js/scripts.min.js"></script>
+<!-- @endif -->
+
 <script id="__bs_script__">//<![CDATA[
 document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));
 //]]></script>

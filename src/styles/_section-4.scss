@@ -249,6 +249,10 @@
     }
   }
 
+  .textarea textarea {
+    height: 62px;
+  }
+
   @include form-triangle;
 
   .btn-form_submit {
@@ -257,13 +261,9 @@
     border: none;
     cursor: pointer;
     margin-top: 38px;
-
-    span {
-      margin-left: 10px;
-      font: 18px $font;
-      font-weight: 400;
-      color: white;
-    }
+    font: 18px $font;
+    font-weight: 400;
+    color: white;
 
     @include mq('tablet-wide') {
        @include auto;

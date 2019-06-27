@@ -52,29 +52,17 @@
 
 .section-7_content.active {
   display: flex;
-  opacity: 1;
-  visibility: visible;
-  transition: all 3s linear;
-}
-
-.section-7_content.visible {
-  opacity: 1;
-  visibility: visible;
-  transition: all .3s linear;
 }
 
 .section-7_content {
   display: none;
   overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
   margin-top: 35px;
-  justify-content: space-between;
+  justify-content: flex-start;
   transition: all .3s linear;
 
   @include mq('tablet') {
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
   }
 
@@ -178,6 +166,9 @@
   }
 
   .text-btn_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 80px 0 20px 105px;
 
     @include mq('desktop') {
@@ -225,10 +216,29 @@
       }
     }
 
-    .btn-next {
+    .btn_prev-next {
       margin-top: 40px;
 
-      button {
+      .btn-prev {
+        @extend %btn-general;
+        display: block;
+        margin-top: 35px;
+        margin-right: 20px;
+        border: none;
+        cursor: pointer;
+        transition: all .5s linear;
+        width: 63px;
+        height: 63px;
+        border-radius: 50%;
+
+        img {
+          margin-left: 0;
+          margin-right: 8px;
+          margin-top: 3px;
+        }
+      }
+
+      .btn-next {
         @extend %btn-general;
         display: block;
         margin-top: 35px;

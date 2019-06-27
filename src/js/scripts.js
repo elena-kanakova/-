@@ -1,37 +1,12 @@
-//Just main
-
 // Маска для телефона
 $(function(){
     $(".phone").mask("+7 999 999 99");
 });
 
-// Скролл и шапка
-$('a.js-nav-link').click(function () {
-    $("html, body").animate({
-        scrollTop: $($(this).attr("href")).offset().top + -110 + "px"
-    }, {
-        duration: 800
-    });
-});
-$('a.js-nav-link-2').click(function () {
-    $("html, body").animate({
-        scrollTop: $($(this).attr("href")).offset().top + -150 + "px"
-    }, {
-        duration: 800
-    });
-});
-
-$('a.js-nav-link-2').click(function () {
-    $("html, body").animate({
-        scrollTop: $($(this).attr("href")).offset().top + -150 + "px"
-    }, {
-        duration: 800
-    });
-});
-
-
 //Табы
 $(function(){
+    $('.section-5__tabs-nav .tab-nav:first').addClass('active');
+    $('.section-5__tabs-content_wrap:first').addClass('active');
     $(".section-5__tabs-nav").on("click", ".tab-nav", function(){
         var tabs = $(".section-5__tabs-nav .tab-nav"),
             cont = $(".section-5__tabs-content_wrap");
@@ -48,6 +23,8 @@ $(function(){
 });
 
 $(function(){
+    $('#optima .section-5__tabs-nav-2 .tab-nav-2:first').addClass('active');
+    $('#optima .section-5__tabs-content-2_wrap:first').addClass('active');
     $("#optima .section-5__tabs-nav-2").on("click", ".tab-nav-2", function(){
         var tabs = $("#optima .section-5__tabs-nav-2 .tab-nav-2"),
             cont = $("#optima .section-5__tabs-content-2_wrap");
@@ -64,6 +41,8 @@ $(function(){
 });
 
 $(function(){
+    $('#premium .section-5__tabs-nav-2 .tab-nav-2:first').addClass('active');
+    $('#premium .section-5__tabs-content-2_wrap:first').addClass('active');
     $("#premium .section-5__tabs-nav-2").on("click", ".tab-nav-2", function(){
         var tabs = $("#premium .section-5__tabs-nav-2 .tab-nav-2"),
             cont = $("#premium .section-5__tabs-content-2_wrap");
@@ -79,87 +58,61 @@ $(function(){
     });
 });
 
-/* Плагин прокрутки сайта */
-$(document).ready(function () {
-    $('#pagepiling').pagepiling({
-        verticalCentered: false,
-        normalScrollElements: null,
-        normalScrollElementTouchThreshold: 5,
-        touchSensitivity: 5,
-        keyboardScrolling: true,
-        sectionSelector: '.section',
-        anchors: ['section-1', 'section-2', 'section-3', 'section-4', 'section-5', 'section-6', 'section-7', 'section-8', 'section-9', 'section-10'],
-        menu: '.header-menu',
-        loopBottom: true,
-        navigation: false,
-        animateAnchor: true,
-        afterLoad: function(anchorLink, index){
-            $('.section').animate({scrollTop: top}, 800);
-            var header = $('.main-header');
-
-            if(anchorLink != 'section-1'){
-                header.addClass('js-scroll');
-            }
-
-            else if(anchorLink == 'section-1') {
-                header.removeClass('js-scroll');
-            };
-
-            if(anchorLink == 'section-9'){
-                header.addClass('white-el');
-            }
-
-            else if(anchorLink != 'section-9'){
-                header.removeClass('white-el');
-            };
-        },
-
-        /*onLeave: function(index, nextIndex, direction){
-            //after leaving section 2
-            if(index == 2 && direction =='down'){
-                alert("Going to section 3!");
-            }
-
-            else if(index == 2 && direction == 'up'){
-                alert("Going to section 1!");
-            }
-        }*/
-    });
-});
-
 // Магнифик
 
 $(document).ready(function () {
-    $('.section-8_slider__slider-wrap .slider .slide a').magnificPopup({
+    $('.section-8_slider__slider-wrap .slide').magnificPopup({
         type: 'image',
         gallery:{
             enabled:true
         }
     });
 
-    $('#slider_opinions .slide a').magnificPopup({
+    $('#slider_opinions .slide').magnificPopup({
+        type: 'image',
+        gallery:{
+            enabled:true
+        }
+    });
+
+    $('.section-5_slider .slide').magnificPopup({
         type: 'image',
         gallery:{
             enabled:true
         }
     });
 });
-
+///wp-content/themes/arkhistroy
 $(document).ready(function () {
     $('#preloader').delay(500).fadeOut(500);
+    //Смена фона
     setTimeout(function(){
-        $('#section-1').css({'background-image': 'url("../img/section-1_bg.jpg")', 'transition': 'background 5s linear'})
+        $('#section-1').css({'background-image': 'url("../wp-content/themes/arkhistroy/img/section-1_bg.jpg")', 'transition': 'background 5s linear'})
     },1000);
-    $('.section-7_content').on('click','.js-btn-next', function () {
-        $('.section-7_content').removeClass('active').next().addClass('active');
-    });
-
+    //Чекбоксы
     $('input[type=checkbox]').attr("checked","checked");
+});
+
+$(document).ready(function () {
+//Слайды на 7-м экране
+    var last = $('.section-7_content:last'),
+        first = $('.section-7_content:first');
+
+    first.addClass('active');
+
+    $('.js-btn-next').on("click", function() {
+        $(this).parent().parent().parent().removeClass('active').next().addClass('active');
+
+        if (last.hasClass('active')) {
+            last.removeClass('active');
+            first.addClass('active');
+        };
+    });
 });
 
 //Скрипт для подложки меню при прокрутке
 $(function () {
-    $('.section').scroll(function(event) {
+    $(window).scroll(function(event) {
         if($(this).scrollTop() > 100) {
             $(".main-header").addClass('white-bg');
         }
@@ -168,7 +121,6 @@ $(function () {
         }
     });
 });
-
 // Модальные окна
 $(document).ready(function() {
     $('.js-modal-link').click(function(e) {
@@ -258,9 +210,25 @@ $(document).ready(function() {
         margin:0,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
+        dots: false,
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
+        responsive: {
+            0: {
+                items: 1,
+            }
+        }
+    });
+});
+
+$(document).ready(function() {
+    $('#project-gallery_slider').owlCarousel({
+        margin:0,
+        nav:true,
+        navText:false,
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
@@ -273,12 +241,11 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#slider_certificates').owlCarousel({
-        margin:0,
+        margin:10,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['','section-5_slider__next'],
         responsive: {
@@ -294,9 +261,8 @@ $(document).ready(function() {
         margin:0,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['','section-5_slider__next'],
         responsive: {
@@ -309,12 +275,11 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $('#slider_opinions').owlCarousel({
-        margin:0,
+        margin:10,
         nav:true,
         navText:false,
-        autoplay:true,
-        loop: true,
-        itemElement:'div',
+        autoplay: false,
+        loop: false,
         dots: false,
         navClass: ['','section-5_slider__next'],
         responsive: {

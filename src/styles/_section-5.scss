@@ -158,6 +158,7 @@
 
 .section-5__tabs-content-2_wrap {
   display: none;
+  padding: 30px 0 50px;
 
   @include mq('tablet-wide') {
     flex-direction: column;
@@ -181,8 +182,10 @@
   }
 }
 
-#section-5_slider {
+.section-5_slider {
+
   .slide {
+    display: block;
     padding: 25px 60px;
     img {
       display: block;
@@ -233,7 +236,7 @@
 .section-5_tabs-content-2_desc {
   width: 50%;
   flex: 1 1 50%;
-  padding: 63px 38px 20px;
+  padding: 33px 38px 20px;
 
   @include mq('tablet-wide') {
     width: 100%;

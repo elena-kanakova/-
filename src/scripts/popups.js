@@ -7,7 +7,6 @@ $(document).ready(function() {
         var id2 = $(this).offset().top,
             height = window.innerHeight / 2;
 
-        $('html').addClass('fixed');
         $('.overlay').fadeIn(200);
         $(id).fadeIn(200);
         $(id).css('top', window.scrollY + height + 'px');
@@ -44,7 +43,6 @@ $(document).ready(function() {
 
         var id = '#' + $(this).attr('data-href');
 
-        $('html').addClass('fixed');
         $('.overlay').fadeIn(200);
         $(id).slideDown(500);
     });
@@ -54,7 +52,7 @@ $(document).ready(function() {
 
         var id = '#' + $(this).attr('data-href');
 
-        $('html').addClass('fixed');
+        //$('html').addClass('fixed');
         $('.overlay').fadeIn(200);
         $(id).addClass('open');
     });
@@ -81,3 +79,10 @@ $(document).ready(function() {
         $('html').removeClass('fixed');
     });
 });
+
+document.addEventListener( 'wpcf7mailsent', function(event) {
+    var id = $('#thanks');
+
+    $('.overlay').fadeIn(200);
+    $(id).fadeIn(500);
+}, false );

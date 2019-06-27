@@ -49,6 +49,12 @@
       }
     }
 
+    .company-name {
+      font: 18px $font-2;
+      font-weight: 400;
+      color: $color-grey;
+    }
+
     .contacts-other {
       margin-top: 120px;
 
@@ -59,6 +65,12 @@
 
     .contacts_copyright {
       margin-top: 70px;
+
+      p {
+        font: 14px $font;
+        font-weight: 400;
+        color: #838383;
+      }
 
       @include mq('tablet') {
         margin-top: 0;
@@ -128,8 +140,9 @@
       margin-right: 0;
     }
 
-    .textarea {}
-    height: 83px;
+    .textarea {
+      height: 62px;
+    }
   }
 
   @include title-triangle;
@@ -144,17 +157,9 @@
     flex: 1 1 261px;
     margin-top: 20px;
     margin-left: 10px;
-
-    span {
-      margin-left: 10px;
-      font: 18px $font;
-      font-weight: 400;
-      color: white;
-
-      br {
-        display: block;
-      }
-    }
+    font: 18px $font;
+    font-weight: 400;
+    color: white;
 
     @include mq('tablet-wide') {
       @include auto;
