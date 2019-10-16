@@ -87,7 +87,7 @@ $(document).ready(function () {
     $('#preloader').delay(500).fadeOut(500);
     //Смена фона
     setTimeout(function(){
-        $('#section-1').css({'background-image': 'url("../wp-content/themes/arkhistroy/img/section-1_bg.jpg")', 'transition': 'background 5s linear'})
+        $('#section-1').css({'background-image': 'url("img/section-1_bg.jpg")', 'transition': 'background 5s linear'})
     },1000);
     //Чекбоксы
     $('input[type=checkbox]').attr("checked","checked");
@@ -132,5 +132,12 @@ $(function () {
         else {
             $(".main-header").removeClass('white-bg');
         }
+    });
+});
+
+$(document).ready(function () {
+    $('.section-5_tabs-content-2_desc .desc_btn-order_btn').click(function (e) {
+        var val = $(this).attr('data-title');
+        $('.hidden').val(val);
     });
 });

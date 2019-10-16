@@ -218,6 +218,7 @@
 
     .btn_prev-next {
       margin-top: 40px;
+      display: flex;
 
       .btn-prev {
         @extend %btn-general;

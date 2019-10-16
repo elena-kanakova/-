@@ -68,6 +68,7 @@ $(document).ready(function() {
         $('.modal').fadeOut(500);
         $('.modal-up').slideUp(500);
         $('.modal-left-right').removeClass('open');
+        $('html').removeClass('fixed');
     });
 
     $('body').on('click', '.overlay', function(event) {

@@ -41,9 +41,15 @@ $(document).ready(function() {
         autoplay: false,
         loop: false,
         dots: false,
-        navClass: ['','section-5_slider__next'],
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
             0: {
+                items: 1,
+            },
+            640: {
+                items: 2,
+            },
+            768: {
                 items: 3,
             }
         }
@@ -58,7 +64,7 @@ $(document).ready(function() {
         autoplay: false,
         loop: false,
         dots: false,
-        navClass: ['','section-5_slider__next'],
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
             0: {
                 items: 1,
@@ -75,9 +81,15 @@ $(document).ready(function() {
         autoplay: false,
         loop: false,
         dots: false,
-        navClass: ['','section-5_slider__next'],
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
             0: {
+                items: 1,
+            },
+            640: {
+                items: 2,
+            },
+            768: {
                 items: 3,
             }
         }

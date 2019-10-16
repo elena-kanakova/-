@@ -68,7 +68,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#slider_opinions .slide').magnificPopup({
+    $('#slider_opinions .slide a').magnificPopup({
         type: 'image',
         gallery:{
             enabled:true
@@ -87,7 +87,7 @@ $(document).ready(function () {
     $('#preloader').delay(500).fadeOut(500);
     //Смена фона
     setTimeout(function(){
-        $('#section-1').css({'background-image': 'url("../wp-content/themes/arkhistroy/img/section-1_bg.jpg")', 'transition': 'background 5s linear'})
+        $('#section-1').css({'background-image': 'url("img/section-1_bg.jpg")', 'transition': 'background 5s linear'})
     },1000);
     //Чекбоксы
     $('input[type=checkbox]').attr("checked","checked");
@@ -100,13 +100,26 @@ $(document).ready(function () {
 
     first.addClass('active');
 
-    $('.js-btn-next').on("click", function() {
-        $(this).parent().parent().parent().removeClass('active').next().addClass('active');
+    $('.js-btn-next').on("click", function(e) {
 
-        if (last.hasClass('active')) {
-            last.removeClass('active');
+        var this_el = $(this).parent().parent().parent();
+
+        this_el.removeClass('active').next().addClass('active');
+
+        if (this_el.is(':last-child')) {
             first.addClass('active');
-        };
+        }
+    });
+
+    $('.js-btn-prev').on("click", function(e) {
+
+        var this_el = $(this).parent().parent().parent();
+
+        this_el.removeClass('active').prev('.section-7_content').addClass('active');
+
+        if (this_el.is(':first-child')) {
+            last.addClass('active');
+        }
     });
 });
 
@@ -121,6 +134,13 @@ $(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $('.section-5_tabs-content-2_desc .desc_btn-order_btn').click(function (e) {
+        var val = $(this).attr('data-title');
+        $('.hidden').val(val);
+    });
+});
 // Модальные окна
 $(document).ready(function() {
     $('.js-modal-link').click(function(e) {
@@ -130,7 +150,6 @@ $(document).ready(function() {
         var id2 = $(this).offset().top,
             height = window.innerHeight / 2;
 
-        $('html').addClass('fixed');
         $('.overlay').fadeIn(200);
         $(id).fadeIn(200);
         $(id).css('top', window.scrollY + height + 'px');
@@ -167,7 +186,6 @@ $(document).ready(function() {
 
         var id = '#' + $(this).attr('data-href');
 
-        $('html').addClass('fixed');
         $('.overlay').fadeIn(200);
         $(id).slideDown(500);
     });
@@ -177,7 +195,7 @@ $(document).ready(function() {
 
         var id = '#' + $(this).attr('data-href');
 
-        $('html').addClass('fixed');
+        //$('html').addClass('fixed');
         $('.overlay').fadeIn(200);
         $(id).addClass('open');
     });
@@ -193,6 +211,7 @@ $(document).ready(function() {
         $('.modal').fadeOut(500);
         $('.modal-up').slideUp(500);
         $('.modal-left-right').removeClass('open');
+        $('html').removeClass('fixed');
     });
 
     $('body').on('click', '.overlay', function(event) {
@@ -204,6 +223,13 @@ $(document).ready(function() {
         $('html').removeClass('fixed');
     });
 });
+
+document.addEventListener( 'wpcf7mailsent', function(event) {
+    var id = $('#thanks');
+
+    $('.overlay').fadeIn(200);
+    $(id).fadeIn(500);
+}, false );
 // Слайдер с в табах с окнами
 $(document).ready(function() {
     $('.section-5_slider').owlCarousel({
@@ -247,9 +273,15 @@ $(document).ready(function() {
         autoplay: false,
         loop: false,
         dots: false,
-        navClass: ['','section-5_slider__next'],
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
             0: {
+                items: 1,
+            },
+            640: {
+                items: 2,
+            },
+            768: {
                 items: 3,
             }
         }
@@ -264,7 +296,7 @@ $(document).ready(function() {
         autoplay: false,
         loop: false,
         dots: false,
-        navClass: ['','section-5_slider__next'],
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
             0: {
                 items: 1,
@@ -281,9 +313,15 @@ $(document).ready(function() {
         autoplay: false,
         loop: false,
         dots: false,
-        navClass: ['','section-5_slider__next'],
+        navClass: ['section-5_slider__prev','section-5_slider__next'],
         responsive: {
             0: {
+                items: 1,
+            },
+            640: {
+                items: 2,
+            },
+            768: {
                 items: 3,
             }
         }

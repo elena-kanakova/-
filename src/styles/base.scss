@@ -1312,10 +1312,15 @@ html.fixed {
 #project-gallery_slider {
   padding: 0 26px;
 
+  .owl-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .slide {
     position: relative;
     overflow: hidden;
-    max-width: 700px;
     margin: 0 auto;
 
     &:before {
@@ -1412,6 +1417,14 @@ html.fixed {
   background: white;
   box-shadow: 0 0 15px 0 rgba(50, 50, 50, 0.75);
 
+  @include mq-custom(640px) {
+    width: 80%;
+  }
+
+  @include mq-custom(360px) {
+    width: 95%;
+  }
+
   .container {
     padding: 0;
   }
@@ -1440,19 +1453,38 @@ html.fixed {
     padding: 60px 150px;
     text-align: center;
 
-    @include mq('tablet-wide') {
+    @include mq-custom(1280px) {
       padding: 50px;
     };
 
     @include mq('tablet') {
-      padding: 50px 0;
+      padding: 50px 15px;
     };
+
+    @include mq-custom(640px) {
+      padding: 30px 15px;
+    }
 
     h3 {
       margin-bottom: 20px;
       font: 48px $font;
       font-weight: 500;
       color: #4a4a4a;
+
+      @include mq-custom(1366px) {
+        font: 38px $font;
+        font-weight: 500;
+      }
+
+      @include mq-custom(1280px) {
+        font: 32px $font;
+        font-weight: 500;
+      }
+
+      @include mq-custom(768px) {
+        font: 26px $font;
+        font-weight: 500;
+      }
     }
 
     p {
@@ -1460,6 +1492,16 @@ html.fixed {
       font: 18px $font;
       font-weight: 400;
       color: #4a4a4a;
+
+      @include mq-custom(1024px) {
+        font: 16px $font;
+        font-weight: 500;
+      }
+
+      @include mq-custom(768px) {
+        font: 14px $font;
+        font-weight: 500;
+      }
     }
   }
 }
@@ -1500,4 +1542,26 @@ html.fixed {
   @import "section-7";
   @import "section-8";
   @import "section-9";
+
+#slider_certificates, #slider_team {
+  .section-5_slider__prev {
+    right: 0;
+    left: auto;
+    top: 40%;
+  }
+  .section-5_slider__next {
+    top: 60%;
+  }
+}
+
+#slider_opinions {
+  .section-5_slider__prev {
+    right: 0;
+    left: auto;
+    top: 45%;
+  }
+  .section-5_slider__next {
+    top: 55%;
+  }
+}
   @import "section-10";
